@@ -27,6 +27,7 @@
   </script>
 </head>
 <body>
+  <canvas id="star-canvas"></canvas>
   <header class="hero">
     <div class="hero-overlay"></div>
     <img class="hero-image" src="assets/Main Paige Top Banner Header.jpg" alt="Travis Kim performing close-up magic">
@@ -58,47 +59,10 @@
 
     <section class="gallery">
       <h3>Moments of Magic</h3>
-      <div class="grid">
-        <img src="assets/Magic Castle Close Up Gallery Photo 2.jpg" alt="Magic Castle performance">
-        <img src="assets/DSC00675.jpg" alt="Sleight of hand">
-        <img src="assets/Audience is stunned and in awe of travis doing a magic trick close up.jpg" alt="Audience reaction to close-up magic">
-        <img src="assets/woman reacts and is bewildered by Travis doing stage magic trick.jpg" alt="Bewildered reaction to stage magic">
-        <img src="assets/DSC01079.JPEG" alt="Event photo">
-        <img src="assets/Corporate Party person reacts strongly and loves magic.JPG" alt="Corporate event reaction">
-        <img src="assets/DSC00272.jpg" alt="Magic demonstration">
-        <img src="assets/IMG_5404.jpg" alt="Magic show">
-        <img src="assets/Family friendly and and corporate events love travis kim.jpg" alt="Family and corporate event magic">
-        <img src="assets/DSC00841.jpg" alt="Magic trick">
-        <img src="assets/Magic Castle Close Up Gallery Photo 1.jpg" alt="Magic Castle Close-Up Gallery">
-        <img src="assets/DSC00113.jpg" alt="Magician at work">
-        <img src="assets/IMG_5413.jpg" alt="Event moment">
-        <img src="assets/Personable magician makes audiencec happy.jpg" alt="Audience enjoying mystifying sleight of hand">
-        <img src="assets/DSC00347.jpg" alt="Performance moment">
-        <img src="assets/IMG_5403.jpg" alt="Performance image">
-        <img src="assets/Travis is personable and impresses crowds well and leaves them feeling happy.jpg" alt="Crowd impressed by Travis">
-        <img src="assets/DSC00936.jpg" alt="Audience interaction">
-        <img src="assets/IMG_5698.JPG" alt="Crowd engagement">
-        <img src="assets/IMG_5699.JPG" alt="Magician photo">
-        <img src="assets/Magic Castle Close Up Gallery Photo 2.jpg" alt="Magic Castle performance">
-        <img src="assets/DSC00675.jpg" alt="Sleight of hand">
-        <img src="assets/Audience is stunned and in awe of travis doing a magic trick close up.jpg" alt="Audience reaction to close-up magic">
-        <img src="assets/woman reacts and is bewildered by Travis doing stage magic trick.jpg" alt="Bewildered reaction to stage magic">
-        <img src="assets/DSC01079.JPEG" alt="Event photo">
-        <img src="assets/Corporate Party person reacts strongly and loves magic.JPG" alt="Corporate event reaction">
-        <img src="assets/DSC00272.jpg" alt="Magic demonstration">
-        <img src="assets/IMG_5404.jpg" alt="Magic show">
-        <img src="assets/Family friendly and and corporate events love travis kim.jpg" alt="Family and corporate event magic">
-        <img src="assets/DSC00841.jpg" alt="Magic trick">
-        <img src="assets/Magic Castle Close Up Gallery Photo 1.jpg" alt="Magic Castle Close-Up Gallery">
-        <img src="assets/DSC00113.jpg" alt="Magician at work">
-        <img src="assets/IMG_5413.jpg" alt="Event moment">
-        <img src="assets/Personable magician makes audiencec happy.jpg" alt="Audience enjoying mystifying sleight of hand">
-        <img src="assets/DSC00347.jpg" alt="Performance moment">
-        <img src="assets/IMG_5403.jpg" alt="Performance image">
-        <img src="assets/Travis is personable and impresses crowds well and leaves them feeling happy.jpg" alt="Crowd impressed by Travis">
-        <img src="assets/DSC00936.jpg" alt="Audience interaction">
-        <img src="assets/IMG_5698.JPG" alt="Crowd engagement">
-        <img src="assets/IMG_5699.JPG" alt="Magician photo">
+      <div class="gallery-scroll">
+        <div class="grid">
+        <!-- Gallery images will be inserted by JavaScript -->
+      </div>
       </div>
     </section>
 
@@ -138,6 +102,48 @@
   </footer>
 
   <script>
+      // Shuffle gallery images on each load
+      (function() {
+        const images = [
+          {src: 'assets/Magic Castle Close Up Gallery Photo 2.jpg', alt: 'Magic Castle performance'},
+          {src: 'assets/DSC00675.jpg', alt: 'Sleight of hand'},
+          {src: 'assets/Audience is stunned and in awe of travis doing a magic trick close up.jpg', alt: 'Audience reaction to close-up magic'},
+          {src: 'assets/woman reacts and is bewildered by Travis doing stage magic trick.jpg', alt: 'Bewildered reaction to stage magic'},
+          {src: 'assets/DSC01079.JPEG', alt: 'Event photo'},
+          {src: 'assets/Corporate Party person reacts strongly and loves magic.JPG', alt: 'Corporate event reaction'},
+          {src: 'assets/DSC00272.jpg', alt: 'Magic demonstration'},
+          {src: 'assets/IMG_5404.jpg', alt: 'Magic show'},
+          {src: 'assets/Family friendly and and corporate events love travis kim.jpg', alt: 'Family and corporate event magic'},
+          {src: 'assets/DSC00841.jpg', alt: 'Magic trick'},
+          {src: 'assets/Magic Castle Close Up Gallery Photo 1.jpg', alt: 'Magic Castle Close-Up Gallery'},
+          {src: 'assets/DSC00113.jpg', alt: 'Magician at work'},
+          {src: 'assets/IMG_5413.jpg', alt: 'Event moment'},
+          {src: 'assets/Personable magician makes audiencec happy.jpg', alt: 'Audience enjoying mystifying sleight of hand'},
+          {src: 'assets/DSC00347.jpg', alt: 'Performance moment'},
+          {src: 'assets/IMG_5403.jpg', alt: 'Performance image'},
+          {src: 'assets/Travis is personable and impresses crowds well and leaves them feeling happy.jpg', alt: 'Crowd impressed by Travis'},
+          {src: 'assets/DSC00936.jpg', alt: 'Audience interaction'},
+          {src: 'assets/IMG_5698.JPG', alt: 'Crowd engagement'},
+          {src: 'assets/IMG_5699.JPG', alt: 'Magician photo'}
+        ];
+        function shuffle(arr) {
+          for (let i = arr.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [arr[i], arr[j]] = [arr[j], arr[i]];
+          }
+          return arr;
+        }
+        const grid = document.querySelector('.gallery .grid');
+        if (grid) {
+          const shuffled = shuffle(images.slice());
+          shuffled.forEach(img => {
+            const el = document.createElement('img');
+            el.src = img.src;
+            el.alt = img.alt;
+            grid.appendChild(el);
+          });
+        }
+      })();
     document.addEventListener('DOMContentLoaded', function() {
       const grid = document.querySelector('.grid');
       const images = Array.from(grid.children);
@@ -152,5 +158,57 @@
     });
   </script>
 
+  <script>
+    // Elegant twinkling stars background
+    const canvas = document.getElementById('star-canvas');
+    const ctx = canvas.getContext('2d');
+    let stars = [];
+    const STAR_COUNT = 90;
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    function createStars() {
+      stars = [];
+      for (let i = 0; i < STAR_COUNT; i++) {
+        stars.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          r: Math.random() * 0.8 + 0.3,
+          alpha: Math.random(),
+          twinkle: Math.random() * 0.02 + 0.01
+        });
+      }
+    }
+    function drawStars() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (const star of stars) {
+        ctx.save();
+        ctx.globalAlpha = 0.7 * star.alpha;
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.r, 0, 2 * Math.PI);
+        ctx.fillStyle = '#fff';
+        ctx.shadowColor = '#fff';
+        ctx.shadowBlur = 6;
+        ctx.fill();
+        ctx.restore();
+        // Twinkle
+        star.alpha += star.twinkle * (Math.random() > 0.5 ? 1 : -1);
+        if (star.alpha < 0.2) star.alpha = 0.2;
+        if (star.alpha > 1) star.alpha = 1;
+      }
+    }
+    function animate() {
+      drawStars();
+      requestAnimationFrame(animate);
+    }
+    window.addEventListener('resize', () => {
+      resizeCanvas();
+      createStars();
+    });
+    resizeCanvas();
+    createStars();
+    animate();
+  </script>
 </body>
 </html>
