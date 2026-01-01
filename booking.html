@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Book Travis Kim — Seattle Magician</title>
+  <meta name="description" content="Contact Travis Kim to book a close-up magician in Seattle. Email travis@closeuplab.com for availability and pricing.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main class="container booking-page">
+    <h1>Book Travis Kim</h1>
+    <p>Thanks for your interest — fill the form below to quickly create an email booking request, or click the direct email button to open your mail client.</p>
+
+    <form id="bookingForm">
+      <label>Event name
+        <input type="text" id="event" placeholder="E.g., Corporate Holiday Party" required>
+      </label>
+      <label>Event date (approx.)
+        <input type="date" id="date">
+      </label>
+      <label>Location / Venue
+        <input type="text" id="venue" placeholder="Venue name or city">
+      </label>
+      <label>Approx. guest count
+        <input type="number" id="guests" min="1" placeholder="E.g., 50">
+      </label>
+      <label>Message / questions
+        <textarea id="message" rows="4" placeholder="Any special requests or context"></textarea>
+      </label>
+
+      <div class="form-actions">
+        <button class="btn primary" type="submit">Send Booking Email</button>
+        <a class="btn ghost" href="mailto:travis@closeuplab.com?subject=Booking%20Inquiry%20for%20Travis%20Kim">Open email client</a>
+      </div>
+    </form>
+
+    <p class="note">If your mail client doesn't open, copy this email: <a href="mailto:travis@closeuplab.com">travis@closeuplab.com</a></p>
+  </main>
+
+  <script>
+    document.getElementById('bookingForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const event = encodeURIComponent(document.getElementById('event').value || 'Booking Inquiry');
+      const date = encodeURIComponent(document.getElementById('date').value || 'TBD');
+      const venue = encodeURIComponent(document.getElementById('venue').value || 'TBD');
+      const guests = encodeURIComponent(document.getElementById('guests').value || 'TBD');
+      const message = encodeURIComponent(document.getElementById('message').value || '');
+      const subject = `Booking Inquiry - ${event}`;
+      const body = `Event: ${decodeURIComponent(event)}%0D%0ADate: ${decodeURIComponent(date)}%0D%0AVenue: ${decodeURIComponent(venue)}%0D%0AGuests: ${decodeURIComponent(guests)}%0D%0A%0D%0A${decodeURIComponent(message)}`;
+      const mailto = `mailto:travis@closeuplab.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailto;
+    });
+  </script>
+</body>
+</html>
