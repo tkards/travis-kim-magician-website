@@ -59,4 +59,4 @@ form label{display:block;margin-bottom:12px}
 input[type=text],input[type=date],input[type=number],textarea{width:100%;padding:10px;border:1px solid #ddd;border-radius:6px}
 .form-actions{display:flex;gap:12px;align-items:center;margin-top:12px}
 
-@media (max-width:700px){.hero h1{font-size:2rem}.about{flex-direction:column}.headshot{width:120px;height:120px}}
+@media (max-width:700px){.hero h1{font-size:2rem}.about{flex-direction:column}.headshot{width:120px;height:auto}}
