@@ -9,8 +9,10 @@
 </head>
 <body>
   <main class="container booking-page">
-    <h1>Book Travis Kim</h1>
-    <p>Thanks for your interest — fill the form below to quickly create an email booking request, or click the direct email button to open your mail client.</p>
+    <a href="index.html" style="color:#fff;text-decoration:underline;margin-bottom:0.1rem;display:inline-block;">Return to Main Page</a>
+    <br style="line-height:0.2;"><br style="line-height:0.2;">
+    <h1 style="margin-top: 0.1em;">Book Magician Travis Kim</h1>
+    <p>Thank you for your interest! Please fill the form below to create an email booking request, or click the direct email button to open your mail client. Best wishes, Travis</p>
 
     <form id="bookingForm">
       <label id="emailLabel">Your email <span class="required-asterisk">*</span>
@@ -38,6 +40,11 @@
         <input type="number" id="guests" min="1" placeholder="E.g., 50" required>
       </label>
       <style>
+        .form-actions {
+          display: flex;
+          gap: 1rem;
+          justify-content: space-between;
+        }
         .required-asterisk {
           color: red;
         }
@@ -68,6 +75,7 @@
       <div class="form-actions">
         <button class="btn primary" type="submit">Send Booking Email</button>
         <a class="btn ghost" href="mailto:travis@closeuplab.com?subject=Booking%20Inquiry%20for%20Travis%20Kim">Open email client</a>
+        <a class="btn ghost" href="index.html" style="margin-left:1rem;">Return to Main Page</a>
       </div>
     </form>
 
@@ -90,6 +98,9 @@
         const body = `First Name: ${decodeURIComponent(firstName)}%0D%0ALast Name: ${decodeURIComponent(lastName)}%0D%0AEmail: ${decodeURIComponent(email)}%0D%0AEvent: ${decodeURIComponent(event)}%0D%0ADate: ${decodeURIComponent(date)}%0D%0AVenue: ${decodeURIComponent(venue)}%0D%0ALength: ${decodeURIComponent(length)}%0D%0AGuests: ${decodeURIComponent(guests)}%0D%0APerformance Type: ${decodeURIComponent(performance)}%0D%0A%0D%0A${decodeURIComponent(message)}`;
       const mailto = `mailto:travis@closeuplab.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       window.location.href = mailto;
+      setTimeout(function() {
+        window.location.href = "booking-confirmation.html";
+      }, 500);
     });
   </script>
 </body>

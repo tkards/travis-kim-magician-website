@@ -104,38 +104,57 @@
   <script>
       // Shuffle gallery images on each load
       (function() {
+        // Assign a group to each image (theme/color)
         const images = [
-          {src: 'assets/Magic Castle Close Up Gallery Photo 2.jpg', alt: 'Magic Castle performance'},
-          {src: 'assets/DSC00675.jpg', alt: 'Sleight of hand'},
-          {src: 'assets/Audience is stunned and in awe of travis doing a magic trick close up.jpg', alt: 'Audience reaction to close-up magic'},
-          {src: 'assets/woman reacts and is bewildered by Travis doing stage magic trick.jpg', alt: 'Bewildered reaction to stage magic'},
-          {src: 'assets/DSC01079.JPEG', alt: 'Event photo'},
-          {src: 'assets/Corporate Party person reacts strongly and loves magic.JPG', alt: 'Corporate event reaction'},
-          {src: 'assets/DSC00272.jpg', alt: 'Magic demonstration'},
-          {src: 'assets/IMG_5404.jpg', alt: 'Magic show'},
-          {src: 'assets/Family friendly and and corporate events love travis kim.jpg', alt: 'Family and corporate event magic'},
-          {src: 'assets/DSC00841.jpg', alt: 'Magic trick'},
-          {src: 'assets/Magic Castle Close Up Gallery Photo 1.jpg', alt: 'Magic Castle Close-Up Gallery'},
-          {src: 'assets/DSC00113.jpg', alt: 'Magician at work'},
-          {src: 'assets/IMG_5413.jpg', alt: 'Event moment'},
-          {src: 'assets/Personable magician makes audiencec happy.jpg', alt: 'Audience enjoying mystifying sleight of hand'},
-          {src: 'assets/DSC00347.jpg', alt: 'Performance moment'},
-          {src: 'assets/IMG_5403.jpg', alt: 'Performance image'},
-          {src: 'assets/Travis is personable and impresses crowds well and leaves them feeling happy.jpg', alt: 'Crowd impressed by Travis'},
-          {src: 'assets/DSC00936.jpg', alt: 'Audience interaction'},
-          {src: 'assets/IMG_5698.JPG', alt: 'Crowd engagement'},
-          {src: 'assets/IMG_5699.JPG', alt: 'Magician photo'}
+          {src: 'assets/Magic Castle Close Up Gallery Photo 2.jpg', alt: 'Magic Castle performance', group: 'castle'},
+          {src: 'assets/DSC00675.jpg', alt: 'Sleight of hand', group: 'performance'},
+          {src: 'assets/Audience is stunned and in awe of travis doing a magic trick close up.jpg', alt: 'Audience reaction to close-up magic', group: 'audience'},
+          {src: 'assets/woman reacts and is bewildered by Travis doing stage magic trick.jpg', alt: 'Bewildered reaction to stage magic', group: 'audience'},
+          {src: 'assets/DSC01079.JPEG', alt: 'Event photo', group: 'performance'},
+          {src: 'assets/Corporate Party person reacts strongly and loves magic.JPG', alt: 'Corporate event reaction', group: 'audience'},
+          {src: 'assets/DSC00272.jpg', alt: 'Magic demonstration', group: 'performance'},
+          {src: 'assets/IMG_5404.jpg', alt: 'Magic show', group: 'performance'},
+          {src: 'assets/Family friendly and and corporate events love travis kim.jpg', alt: 'Family and corporate event magic', group: 'audience'},
+          {src: 'assets/DSC00841.jpg', alt: 'Magic trick', group: 'performance'},
+          {src: 'assets/Magic Castle Close Up Gallery Photo 1.jpg', alt: 'Magic Castle Close-Up Gallery', group: 'castle'},
+          {src: 'assets/DSC00113.jpg', alt: 'Magician at work', group: 'performance'},
+          {src: 'assets/IMG_5413.jpg', alt: 'Event moment', group: 'performance'},
+          {src: 'assets/Personable magician makes audiencec happy.jpg', alt: 'Audience enjoying mystifying sleight of hand', group: 'audience'},
+          {src: 'assets/DSC00347.jpg', alt: 'Performance moment', group: 'performance'},
+          {src: 'assets/IMG_5403.jpg', alt: 'Performance image', group: 'performance'},
+          {src: 'assets/Travis is personable and impresses crowds well and leaves them feeling happy.jpg', alt: 'Crowd impressed by Travis', group: 'audience'},
+          {src: 'assets/DSC00936.jpg', alt: 'Audience interaction', group: 'audience'},
+          {src: 'assets/IMG_5698.JPG', alt: 'Crowd engagement', group: 'audience'},
+          {src: 'assets/IMG_5699.JPG', alt: 'Magician photo', group: 'performance'}
         ];
-        function shuffle(arr) {
-          for (let i = arr.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [arr[i], arr[j]] = [arr[j], arr[i]];
+        // Greedy shuffle: try to avoid adjacent same-group images
+        function smartShuffle(arr) {
+          let result = [];
+          let pool = arr.slice();
+          // Start with a random image
+          result.push(pool.splice(Math.floor(Math.random() * pool.length), 1)[0]);
+          while (pool.length) {
+            // Filter out images with the same group as the last one in result
+            let lastGroup = result[result.length - 1].group;
+            let candidates = pool.filter(img => img.group !== lastGroup);
+            let next;
+            if (candidates.length === 0) {
+              // If all remaining are same group, just pick any
+              next = pool.splice(Math.floor(Math.random() * pool.length), 1)[0];
+            } else {
+              // Pick randomly from candidates
+              let idx = Math.floor(Math.random() * candidates.length);
+              next = candidates[idx];
+              // Remove from pool
+              pool.splice(pool.indexOf(next), 1);
+            }
+            result.push(next);
           }
-          return arr;
+          return result;
         }
         const grid = document.querySelector('.gallery .grid');
         if (grid) {
-          const shuffled = shuffle(images.slice());
+          const shuffled = smartShuffle(images);
           shuffled.forEach(img => {
             const el = document.createElement('img');
             el.src = img.src;
