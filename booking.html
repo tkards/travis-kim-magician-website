@@ -13,20 +13,56 @@
     <p>Thanks for your interest — fill the form below to quickly create an email booking request, or click the direct email button to open your mail client.</p>
 
     <form id="bookingForm">
-      <label>Event name
-        <input type="text" id="event" placeholder="E.g., Corporate Holiday Party" required>
+      <label id="emailLabel">Your email <span class="required-asterisk">*</span>
+        <input type="email" id="userEmail" placeholder="your@email.com" required>
       </label>
-      <label>Event date (approx.)
-        <input type="date" id="date">
+        <label id="firstNameLabel">First name <span class="required-asterisk">*</span>
+          <input type="text" id="firstName" placeholder="First name" required>
+        </label>
+        <label id="lastNameLabel">Last name <span class="required-asterisk">*</span>
+          <input type="text" id="lastName" placeholder="Last name" required>
+        </label>
+      <label id="eventLabel">Event name <span class="required-asterisk">*</span>
+        <input type="text" id="event" placeholder="E.g., Corporate Holiday Party, Wedding Cocktail Hour, Birthday Party, etc." required>
       </label>
-      <label>Location / Venue
-        <input type="text" id="venue" placeholder="Venue name or city">
+      <label id="dateLabel">Event date (approx.) <span class="required-asterisk">*</span>
+        <input type="date" id="date" required>
       </label>
-      <label>Approx. guest count
-        <input type="number" id="guests" min="1" placeholder="E.g., 50">
+      <label id="venueLabel">Location / Venue <span class="required-asterisk">*</span>
+        <input type="text" id="venue" placeholder="Venue address or city" required>
       </label>
-      <label>Message / questions
-        <textarea id="message" rows="4" placeholder="Any special requests or context"></textarea>
+      <label id="lengthLabel">Length of performance <span class="required-asterisk">*</span>
+        <input type="text" id="length" placeholder="E.g., 1 hour, flexible, etc." required>
+      </label>
+      <label id="guestsLabel">Approx. guest count <span class="required-asterisk">*</span>
+        <input type="number" id="guests" min="1" placeholder="E.g., 50" required>
+      </label>
+      <style>
+        .required-asterisk {
+          color: red;
+        }
+        .missing-field .required-asterisk {
+          color: #fff;
+          background: red;
+          border-radius: 50%;
+          padding: 0 6px;
+        }
+        a[href^="mailto:"] {
+          color: #fff !important;
+        }
+      </style>
+
+      <label>Performance type
+        <select id="performance">
+          <option value="Strolling Magic">Strolling Magic</option>
+          <option value="Sit-down Parlour Show">Sit-down Parlour Show</option>
+          <option value="Something Else">Something Else</option>
+          <option value="Not Sure">Not Sure</option>
+        </select>
+      </label>
+
+      <label>Message
+        <textarea id="message" rows="4" placeholder="Questions or anything you'd like us to know"></textarea>
       </label>
 
       <div class="form-actions">
@@ -45,9 +81,13 @@
       const date = encodeURIComponent(document.getElementById('date').value || 'TBD');
       const venue = encodeURIComponent(document.getElementById('venue').value || 'TBD');
       const guests = encodeURIComponent(document.getElementById('guests').value || 'TBD');
+      const length = encodeURIComponent(document.getElementById('length').value || 'Not Specified');
+      const performance = encodeURIComponent(document.getElementById('performance').value || 'Not Specified');
       const message = encodeURIComponent(document.getElementById('message').value || '');
-      const subject = `Booking Inquiry - ${event}`;
-      const body = `Event: ${decodeURIComponent(event)}%0D%0ADate: ${decodeURIComponent(date)}%0D%0AVenue: ${decodeURIComponent(venue)}%0D%0AGuests: ${decodeURIComponent(guests)}%0D%0A%0D%0A${decodeURIComponent(message)}`;
+        const firstName = encodeURIComponent(document.getElementById('firstName').value || '');
+        const lastName = encodeURIComponent(document.getElementById('lastName').value || '');
+        const subject = `Booking Inquiry - ${event}`;
+        const body = `First Name: ${decodeURIComponent(firstName)}%0D%0ALast Name: ${decodeURIComponent(lastName)}%0D%0AEmail: ${decodeURIComponent(email)}%0D%0AEvent: ${decodeURIComponent(event)}%0D%0ADate: ${decodeURIComponent(date)}%0D%0AVenue: ${decodeURIComponent(venue)}%0D%0ALength: ${decodeURIComponent(length)}%0D%0AGuests: ${decodeURIComponent(guests)}%0D%0APerformance Type: ${decodeURIComponent(performance)}%0D%0A%0D%0A${decodeURIComponent(message)}`;
       const mailto = `mailto:travis@closeuplab.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       window.location.href = mailto;
     });
