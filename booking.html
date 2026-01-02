@@ -1,6 +1,13 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+      (function(){
+        emailjs.init('travis@closeuplab.com'); // Replace with your EmailJS user ID
+      })();
+    </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Book Travis Kim — Seattle Magician</title>
@@ -16,20 +23,20 @@
 
     <form id="bookingForm">
       <label id="emailLabel">Your email <span class="required-asterisk">*</span>
-        <input type="email" id="userEmail" placeholder="your@email.com" required>
+        <input type="email" id="userEmail" name="user_email" placeholder="your@email.com" required>
       </label>
         <label id="firstNameLabel">First name <span class="required-asterisk">*</span>
-          <input type="text" id="firstName" placeholder="First name" required>
+          <input type="text" id="firstName" name="first_name" placeholder="First name" required>
         </label>
         <label id="lastNameLabel">Last name <span class="required-asterisk">*</span>
-          <input type="text" id="lastName" placeholder="Last name" required>
+          <input type="text" id="lastName" name="last_name" placeholder="Last name" required>
         </label>
 
       <label id="lengthLabel">Length of performance <span class="required-asterisk">*</span>
-        <input type="text" id="length" placeholder="E.g., 1 hour, flexible, etc." required>
+        <input type="text" id="length" name="length" placeholder="E.g., 1 hour, flexible, etc." required>
       </label>
       <label id="guestsLabel">Approx. guest count <span class="required-asterisk">*</span>
-        <input type="number" id="guests" min="1" placeholder="E.g., 50" required>
+        <input type="number" id="guests" name="guests" min="1" placeholder="E.g., 50" required>
       </label>
       <style>
         .form-actions {
@@ -52,7 +59,7 @@
       </style>
 
       <label>Performance type
-        <select id="performance">
+        <select id="performance" name="performance">
           <option value="Strolling Magic">Strolling Magic</option>
           <option value="Sit-down Parlour Show">Sit-down Parlour Show</option>
           <option value="Something Else">Something Else</option>
@@ -61,7 +68,7 @@
       </label>
 
       <label>Message
-        <textarea id="message" rows="4" placeholder="Questions or anything you'd like us to know"></textarea>
+        <textarea id="message" name="message" rows="4" placeholder="Questions or anything you'd like us to know"></textarea>
       </label>
 
       <div class="form-actions">
@@ -75,22 +82,15 @@
   </main>
 
   <script>
-    document.getElementById('bookingForm').addEventListener('submit', function(e){
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      const guests = encodeURIComponent(document.getElementById('guests').value || 'TBD');
-      const length = encodeURIComponent(document.getElementById('length').value || 'Not Specified');
-      const performance = encodeURIComponent(document.getElementById('performance').value || 'Not Specified');
-      const message = encodeURIComponent(document.getElementById('message').value || '');
-      const firstName = encodeURIComponent(document.getElementById('firstName').value || '');
-      const lastName = encodeURIComponent(document.getElementById('lastName').value || '');
-      const email = encodeURIComponent(document.getElementById('userEmail').value || '');
-      const subject = `Booking Inquiry`;
-      const body = `First Name: ${decodeURIComponent(firstName)}%0D%0ALast Name: ${decodeURIComponent(lastName)}%0D%0AEmail: ${decodeURIComponent(email)}%0D%0ALength: ${decodeURIComponent(length)}%0D%0AGuests: ${decodeURIComponent(guests)}%0D%0APerformance Type: ${decodeURIComponent(performance)}%0D%0A%0D%0A${decodeURIComponent(message)}`;
-      const mailto = `mailto:travis@closeuplab.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      window.location.href = mailto;
-      setTimeout(function() {
-        window.location.href = "booking-confirmation.html";
-      }, 500);
+      emailjs.sendForm('service_l894qhg', '{{user_email}}', this)
+        .then(function() {
+          alert('Booking request sent! Thank you.');
+          window.location.href = "booking-confirmation.html";
+        }, function(error) {
+          alert('There was an error sending your booking request. Please try again or email travis@closeuplab.com.');
+        });
     });
   </script>
 </body>
