@@ -52,6 +52,8 @@ header, main, footer, .hero, .container, .about, .gallery, .testimonials, .site-
 	width: 100%;
 	overflow: hidden;
 	position: relative;
+	/* Smooth scrolling for iOS rendering bug */
+	-webkit-overflow-scrolling: touch;
 }
 .grid {
 	display: inline-flex;
