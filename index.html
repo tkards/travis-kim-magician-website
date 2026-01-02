@@ -39,7 +39,7 @@
   </script>
 </head>
 <body>
-  <canvas id="star-canvas"></canvas>
+  <!-- Removed starry background canvas for simple dark background -->
   <header class="hero">
     <div class="hero-overlay"></div>
     <img class="hero-image" src="assets/Main Paige Top Banner Header.jpg" alt="Seattle magician Travis Kim performing close-up magic at an event">
@@ -189,35 +189,7 @@
     });
   </script>
 
-  <script>
-    // Elegant twinkling stars background
-    const canvas = document.getElementById('star-canvas');
-    const ctx = canvas.getContext('2d');
-    let stars = [];
-    const STAR_COUNT = 90;
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    function createStars() {
-      stars = [];
-      for (let i = 0; i < STAR_COUNT; i++) {
-        stars.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          r: Math.random() * 0.8 + 0.3,
-          alpha: Math.random(),
-          twinkle: Math.random() * 0.02 + 0.01
-        });
-      }
-    }
-    function drawStars() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      for (const star of stars) {
-        ctx.save();
-        ctx.globalAlpha = 0.7 * star.alpha;
-        ctx.beginPath();
-        ctx.arc(star.x, star.y, star.r, 0, 2 * Math.PI);
+  <!-- Removed starry background script for simple dark background -->
         ctx.fillStyle = '#fff';
         ctx.shadowColor = '#fff';
         ctx.shadowBlur = 6;
