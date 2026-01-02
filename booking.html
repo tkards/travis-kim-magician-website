@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <!-- EmailJS SDK -->
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
       (function(){
-        emailjs.init('travis@closeuplab.com'); // Replace with your EmailJS user ID
+        emailjs.init('cLhDB8nWdSIMPtG-l'); // Replace with your EmailJS user ID
       })();
     </script>
   <meta charset="utf-8">
@@ -84,7 +84,7 @@
   <script>
     document.getElementById('bookingForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      emailjs.sendForm('service_l894qhg', '{{user_email}}', this)
+      emailjs.sendForm('service_l894qhg', 'template_y1o9v3q', this)
         .then(function() {
           alert('Booking request sent! Thank you.');
           window.location.href = "booking-confirmation.html";
