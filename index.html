@@ -186,6 +186,20 @@
       // Clear and re-append
       grid.innerHTML = '';
       images.forEach(img => grid.appendChild(img));
+
+      // Force animation restart on load and resize
+      function restartGalleryAnimation() {
+        if (!grid) return;
+        grid.style.animation = 'none';
+        // Trigger reflow
+        void grid.offsetWidth;
+        // Explicitly set the animation property to ensure it starts
+        setTimeout(() => {
+          grid.style.animation = 'scroll-gallery 103.68s linear infinite';
+        }, 10);
+      }
+      restartGalleryAnimation();
+      window.addEventListener('resize', restartGalleryAnimation);
     });
   </script>
 </body>
