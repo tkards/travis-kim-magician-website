@@ -35,10 +35,18 @@
 	display: block;
 	width: 60px;
 	height: 4px;
-	background: var(--accent);
+	background: #ffd700;
 	margin: 12px auto 0 auto;
 	border-radius: 2px;
-	opacity: 0.7;
+	opacity: 0.85;
+}
+
+/* Remove underline for Trusted By */
+.clients .section-title::after {
+	display: none;
+}
+.about-title::after {
+	background: #ffd700;
 }
 /* Move 'Ready to book?' section up slightly */
 .contact-quick {
