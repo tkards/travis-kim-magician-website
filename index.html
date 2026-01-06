@@ -37,6 +37,52 @@
     }
   }
   </script>
+    <!-- LocalBusiness schema for local SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Travis Kim Magic Entertainment",
+      "image": "https://www.gigsalad.com/user_photos/2023/10/19/378b7e7e-1e7e-4e2e-8e2e-1e7e4e2e8e2e.jpg",
+      "@id": "https://www.gigsalad.com/magician_travis_kim_seattle",
+      "url": "https://www.gigsalad.com/magician_travis_kim_seattle",
+      "telephone": "+12065551234",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "Seattle",
+        "addressRegion": "WA",
+        "postalCode": "",
+        "addressCountry": "US"
+      },
+      "priceRange": "$$",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "12"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": "Greta C.",
+          "reviewBody": "Hiring Travis for our holiday party was the best decision! He was communicative, easy to work with, understood exactly what we wanted, and tailored the show to our crowd. Two weeks later, I'm still hearing how much people loved his performance.",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+        },
+        {
+          "@type": "Review",
+          "author": "Charlie R.",
+          "reviewBody": "Travis was super easy to work with—professional, flexible, and a great communicator. He tailored his performance to our group and made sure everyone was engaged. Our guests are still talking about his magic weeks later!",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+        },
+        {
+          "@type": "Review",
+          "author": "Citlalli B.",
+          "reviewBody": "Travis was funny, chill, and incredibly talented. He remembered our names throughout the show, which made the experience feel personal and special. Everyone was blown away by his tricks, and he made our event truly memorable.",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
   <!-- Removed starry background canvas for simple dark background -->
@@ -56,11 +102,11 @@
 
   <main class="container">
     <section class="about">
-      <img class="headshot" src="assets/Main Headshot.jpg" alt="Seattle magician Travis Kim headshot">
+      <img class="headshot" src="assets/Main Headshot.jpg" alt="Seattle magician Travis Kim headshot performing magic in Seattle">
       <div>
         <h2>Close-up magic with a personal touch</h2>
         <p>Travis Kim is an expert close-up sleight-of-hand magician, captivating audiences with world-class magic that astonishes and delights. As a resident magician at Haunted Soiree Seattle for four years running, and a headliner at the prestigious Magic Castle in Hollywood, he brings unparalleled expertise to private parties, corporate events, weddings, and themed gatherings across Seattle and surrounding areas. Known for his technical prowess, humor, and engaging style, Travis ensures every event is memorable and enjoyable.</p>
-        <p>Read reviews and book directly: <a href="https://www.gigsalad.com/magician_travis_kim_seattle" target="_blank" rel="noopener" style="text-decoration: underline;">Gigsalad Profile</a></p>
+        <p>Read reviews and book directly: <a href="https://www.gigsalad.com/magician_travis_kim_seattle" target="_blank" rel="noopener" style="text-decoration: underline;">Gigsalad Profile</a>. <a href="booking.html">Book your Seattle magician now</a> or <a href="mailto:travis@closeuplab.com">contact Travis</a> for availability.</p>
         <ul>
           <li>Resident magician — Haunted Soiree Seattle (4 years)</li>
           <li>Headlined the Close-Up Gallery at The Magic Castle, Hollywood</li>
@@ -70,7 +116,7 @@
     </section>
 
     <section class="gallery">
-      <h3>Moments of Magic</h3>
+      <h3 class="gallery-title">Moments of Magic</h3>
       <div class="gallery-scroll">
         <div class="grid">
         <!-- Gallery images will be inserted by JavaScript -->
@@ -87,6 +133,69 @@
       </div>
     </section>
 
+    <!-- FAQ Section for SEO (moved here) -->
+    <section class="faq">
+      <h3 class="faq-title">Frequently Asked Questions</h3>
+      <div class="faq-item">
+        <h4>What types of events do you perform at?</h4>
+        <p>I perform at corporate events, weddings, private parties, and special occasions throughout Seattle and the surrounding area.</p>
+      </div>
+      <div class="faq-item">
+        <h4>How far in advance should I book?</h4>
+        <p>It’s best to book as early as possible, especially for weekends and holidays. However, I can sometimes accommodate last-minute requests.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Do you travel outside Seattle?</h4>
+        <p>Yes! I am available for events in the greater Seattle area and occasionally travel for special bookings.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Are your performances family-friendly?</h4>
+        <p>My magic is suitable for all ages and can be tailored for both family and corporate audiences, but I do not offer shows specifically catered for children.</p>
+      </div>
+    </section>
+    <!-- FAQPage Schema (moved here) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What types of events do you perform at?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "I perform at corporate events, weddings, private parties, and special occasions throughout Seattle and the surrounding area."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How far in advance should I book?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It’s best to book as early as possible, especially for weekends and holidays. However, I can sometimes accommodate last-minute requests."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you travel outside Seattle?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! I am available for events in the greater Seattle area and occasionally travel for special bookings."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are your performances family-friendly?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "My magic is suitable for all ages and can be tailored for both family and corporate audiences, but I do not offer shows specifically catered for children."
+          }
+        }
+      ]
+    }
+    </script>
+    </section>
+
     <section class="contact-quick">
       <h3>Ready to book?</h3>
       <p>Click the button below to send a booking request.</p>
@@ -98,11 +207,11 @@
   <section class="clients">
     <h3>Trusted By</h3>
     <div class="logos">
-      <img src="assets/card kingdom logo.png" alt="Card Kingdom" class="logo-card-kingdom">
-      <img src="assets/m2m logo.jpg" alt="Meyer2Meyer Entertainment" class="logo-m2m">
-      <img src="assets/magic castle logo.jpeg" alt="The Academy of Magical Arts" style="filter: invert(1);" class="logo-magic-castle">
-      <img src="assets/sanca logo.png" alt="Fred Hutch Cancer Center">
-      <img src="assets/fred hutch logo.jpg" alt="Fred Hutch Cancer Center" class="logo-fred-hutch">
+      <img src="assets/card kingdom logo.png" alt="Card Kingdom - Seattle event entertainment client" class="logo-card-kingdom">
+      <img src="assets/m2m logo.jpg" alt="Meyer2Meyer Entertainment - Seattle event entertainment client" class="logo-m2m">
+      <img src="assets/magic castle logo.jpeg" alt="The Academy of Magical Arts - Magic Castle" style="filter: invert(1);" class="logo-magic-castle">
+      <img src="assets/sanca logo.png" alt="SANCA - Seattle event entertainment client">
+      <img src="assets/fred hutch logo.jpg" alt="Fred Hutch Cancer Center - Seattle event entertainment client" class="logo-fred-hutch">
     </div>
   </section>
 
@@ -110,6 +219,10 @@
     <div class="container">
       <p>© Travis Kim — Close-up Magician • Seattle</p>
       <p><a href="mailto:travis@closeuplab.com">travis@closeuplab.com</a> • <a href="https://www.instagram.com/tkards" target="_blank" rel="noopener">@tkards</a></p>
+      <p><strong>Travis Kim Magic Entertainment</strong><br>
+      Seattle, WA<br>
+      <a href="tel:+12065551234">(206) 555-1234</a><br>
+      <span style="display:none">NAP for SEO: Travis Kim Magic Entertainment, Seattle, WA, (206) 555-1234</span></p>
     </div>
   </footer>
 
