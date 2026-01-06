@@ -1,10 +1,44 @@
-/* Center Gallery section title */
-.gallery-title {
+/* Make about section heading more bold and noticeable */
+.about-title {
+	font-size: 2.1rem;
+	font-weight: 900;
+	color: var(--accent);
 	text-align: center;
+	margin-bottom: 0.7rem;
+	text-shadow: 0 2px 12px #000, 0 1px 0 #fff2;
+	letter-spacing: 0.5px;
+	position: relative;
 }
-/* Center FAQ section title */
-.faq-title {
+.about-title::after {
+	content: '';
+	display: block;
+	width: 48px;
+	height: 4px;
+	background: var(--accent);
+	margin: 10px auto 0 auto;
+	border-radius: 2px;
+	opacity: 0.7;
+}
+/* Enhanced section titles for visibility */
+.section-title, .faq-title, .gallery-title {
 	text-align: center;
+	font-size: 2.2rem;
+	font-weight: 900;
+	margin-top: 2.5rem;
+	margin-bottom: 1.2rem;
+	color: var(--accent);
+	text-shadow: 0 2px 12px #000, 0 1px 0 #fff2;
+	position: relative;
+}
+.section-title::after, .faq-title::after, .gallery-title::after {
+	content: '';
+	display: block;
+	width: 60px;
+	height: 4px;
+	background: var(--accent);
+	margin: 12px auto 0 auto;
+	border-radius: 2px;
+	opacity: 0.7;
 }
 /* Move 'Ready to book?' section up slightly */
 .contact-quick {
@@ -17,7 +51,7 @@
 .logo-fred-hutch {
 	border-radius: 8px;
 }
-:root{--accent:#c77dff;--dark:#1a1a1a;--muted:#ccc}
+:root{--accent:#fff;--dark:#1a1a1a;--muted:#ccc}
 *{box-sizing:border-box}
 body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;margin:0;color:#eee;background:#181818}
 /* Removed star-canvas for simple dark background */
@@ -43,7 +77,11 @@ header, main, footer, .hero, .container, .about, .gallery, .testimonials, .site-
 .sub{opacity:.9;margin:.5rem 0 1.2rem}
 .cta-row{display:flex;gap:12px;justify-content:center}
 .btn{display:inline-block;padding:12px 18px;border-radius:8px;text-decoration:none;font-weight:600}
-.btn.primary{background:var(--accent);color:#fff}
+.btn.primary{
+	background: #e6b800;
+	color: #181818;
+	font-weight: 700;
+}
 .btn.ghost{background:transparent;border:2px solid rgba(255,255,255,.9);color:#fff}
 .about{display:flex;gap:20px;align-items:center;padding:36px 0}
 .headshot{width:250px;height:auto;border-radius:8px}
