@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Electronic Press Kit - Travis Kim | Seattle Magician</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    .epk-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 28px;
+    }
+    
+    .epk-header {
+      text-align: center;
+      border-bottom: 2px solid #333;
+      padding-bottom: 30px;
+      margin-bottom: 40px;
+    }
+    
+    .epk-header h1 {
+      font-size: 2.8rem;
+      color: #ffd700;
+      margin-bottom: 10px;
+      font-weight: 900;
+      text-shadow: 0 2px 12px #000;
+    }
+    
+    .epk-header .subtitle {
+      font-size: 1.2rem;
+      color: #ccc;
+      margin-bottom: 20px;
+    }
+    
+    .epk-header .contact-info {
+      font-size: 0.95rem;
+      color: #aaa;
+      margin-top: 15px;
+    }
+    
+    .epk-header .contact-info a {
+      color: #ffd700;
+      text-decoration: none;
+    }
+    
+    .epk-section {
+      margin-bottom: 50px;
+    }
+    
+    .epk-section h2 {
+      font-size: 1.8rem;
+      color: #ffd700;
+      margin-bottom: 20px;
+      font-weight: 700;
+      border-bottom: 1px solid #333;
+      padding-bottom: 10px;
+    }
+    
+    .epk-section h3 {
+      font-size: 1.3rem;
+      color: #fff;
+      margin-top: 25px;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    
+    .epk-section p, .epk-section ul {
+      color: #ddd;
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+    
+    .epk-section ul {
+      padding-left: 25px;
+    }
+    
+    .epk-section li {
+      margin-bottom: 8px;
+    }
+    
+    .bio-short {
+      background: #222;
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 4px solid #ffd700;
+      margin-bottom: 25px;
+    }
+    
+    .bio-long {
+      background: #1e1e1e;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 25px;
+    }
+    
+    .press-photos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    
+    .press-photo {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    
+    .press-photo img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+    }
+    
+    .press-photo .caption {
+      font-size: 0.85rem;
+      color: #999;
+      margin-top: 8px;
+      text-align: center;
+    }
+    
+    .accolades-list {
+      background: #222;
+      padding: 20px 25px;
+      border-radius: 8px;
+    }
+    
+    .accolades-list li {
+      color: #eee;
+      margin-bottom: 12px;
+      position: relative;
+      padding-left: 10px;
+    }
+    
+    .accolades-list li::before {
+      content: "★";
+      color: #ffd700;
+      position: absolute;
+      left: -10px;
+    }
+    
+    .testimonial-box {
+      background: #222;
+      padding: 20px;
+      border-left: 4px solid #ffd700;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    
+    .testimonial-box p {
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+    
+    .testimonial-box cite {
+      color: #ffd700;
+      font-style: normal;
+      font-weight: 600;
+    }
+    
+    .tech-specs {
+      background: #1e1e1e;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    
+    .tech-specs strong {
+      color: #ffd700;
+    }
+    
+    .download-section {
+      background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+      padding: 25px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    
+    .download-btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #ffd700;
+      color: #181818;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 700;
+      margin: 10px;
+      transition: background 0.3s;
+    }
+    
+    .download-btn:hover {
+      background: #e6b800;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    
+    .stat-box {
+      background: #222;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    
+    .stat-number {
+      font-size: 2.5rem;
+      color: #ffd700;
+      font-weight: 900;
+      display: block;
+    }
+    
+    .stat-label {
+      color: #ccc;
+      font-size: 0.95rem;
+      margin-top: 8px;
+    }
+    
+    @media (max-width: 700px) {
+      .epk-header h1 {
+        font-size: 2rem;
+      }
+      
+      .press-photos {
+        grid-template-columns: 1fr;
+      }
+      
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="epk-container">
+    <header class="epk-header">
+      <h1>Travis Kim</h1>
+      <p class="subtitle">Electronic Press Kit</p>
+      <p style="color: #ddd; max-width: 600px; margin: 20px auto;">Close-Up Sleight-of-Hand Expert Magician<br>Seattle, WA</p>
+      <div class="contact-info">
+        <p><strong>Email:</strong> <a href="mailto:travis@closeuplab.com">travis@closeuplab.com</a> | <strong>Web:</strong> <a href="https://www.gigsalad.com/magician_travis_kim_seattle" target="_blank">GigSalad Profile</a></p>
+      </div>
+    </header>
+
+    <!-- BIO SECTION -->
+    <section class="epk-section">
+      <h2>Biography</h2>
+      
+      <div class="bio-short">
+        <h3>Short Bio (50 words)</h3>
+        <p>Travis Kim is a Seattle-based close-up magician specializing in world-class sleight-of-hand. As the resident magician at Haunted Soiree Seattle and headliner at The Magic Castle's Close-Up Gallery, Travis delivers unforgettable interactive magic experiences for corporate events, weddings, and private parties.</p>
+      </div>
+      
+      <div class="bio-long">
+        <h3>Long Bio (150 words)</h3>
+        <p>Travis Kim is one of Seattle's premier close-up magicians, known for his exceptional sleight-of-hand artistry and engaging performance style. With a focus on intimate, interactive magic, Travis creates moments of genuine wonder that leave audiences talking long after the event ends.</p>
+        
+        <p>As the resident magician at Haunted Soiree Seattle and a featured headliner at the prestigious Magic Castle's Close-Up Gallery in Hollywood, Travis has earned a reputation for excellence in the magic community. His performances blend technical mastery with personable charm, making him a sought-after entertainer for corporate events, weddings, holiday parties, and private gatherings.</p>
+        
+        <p>Travis's clients include Microsoft, Magic 2 Magicians, Fred Hutchinson Cancer Center, and Card Kingdom. His 5-star ratings and enthusiastic testimonials reflect his commitment to creating memorable, magical experiences that perfectly complement any event. Based in Seattle, Travis performs throughout the Pacific Northwest and beyond.</p>
+      </div>
+    </section>
+
+    <!-- ACCOLADES & CREDENTIALS -->
+    <section class="epk-section">
+      <h2>Accolades & Credentials</h2>
+      <ul class="accolades-list">
+        <li><strong>Resident Magician</strong> - Haunted Soiree Seattle (Premier immersive cocktail experience)</li>
+        <li><strong>Headliner</strong> - The Magic Castle Close-Up Gallery, Hollywood, CA</li>
+        <li><strong>5.0/5.0 Rating</strong> - GigSalad (12+ verified reviews)</li>
+        <li><strong>Featured Performer</strong> - Corporate events for Microsoft, Fred Hutchinson Cancer Center, and other Fortune 500 companies</li>
+        <li><strong>Specialization</strong> - Close-up sleight-of-hand magic and interactive table magic</li>
+        <li><strong>Professional Member</strong> - International magic community</li>
+      </ul>
+    </section>
+
+    <!-- PERFORMANCE STATS -->
+    <section class="epk-section">
+      <h2>Performance Highlights</h2>
+      <div class="stats-grid">
+        <div class="stat-box">
+          <span class="stat-number">500+</span>
+          <p class="stat-label">Events Performed</p>
+        </div>
+        <div class="stat-box">
+          <span class="stat-number">5.0</span>
+          <p class="stat-label">Average Rating</p>
+        </div>
+        <div class="stat-box">
+          <span class="stat-number">100%</span>
+          <p class="stat-label">Client Satisfaction</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT TRAVIS OFFERS -->
+    <section class="epk-section">
+      <h2>Performance Offerings</h2>
+      
+      <h3>Event Types</h3>
+      <ul>
+        <li><strong>Corporate Events:</strong> Team building, holiday parties, networking mixers, product launches</li>
+        <li><strong>Weddings:</strong> Cocktail hour entertainment, reception table magic</li>
+        <li><strong>Private Parties:</strong> Birthday celebrations, dinner parties, anniversaries</li>
+        <li><strong>Special Events:</strong> Grand openings, VIP experiences, charity galas</li>
+      </ul>
+      
+      <h3>Performance Styles</h3>
+      <ul>
+        <li><strong>Strolling/Walk-Around Magic:</strong> Mingles with guests, performing for small groups</li>
+        <li><strong>Table Magic:</strong> Intimate performances for seated groups during meals or cocktails</li>
+        <li><strong>Close-Up Magic:</strong> Up-close, interactive illusions happening in spectators' hands</li>
+      </ul>
+      
+      <h3>What Makes Travis Different</h3>
+      <ul>
+        <li>Personalized performances tailored to your audience and event theme</li>
+        <li>Exceptional communication and professionalism from booking to performance</li>
+        <li>Clean, family-friendly material suitable for all ages</li>
+        <li>Flexible performance formats to match your event timeline</li>
+        <li>Creates memorable moments that guests talk about for weeks</li>
+      </ul>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="epk-section">
+      <h2>Client Testimonials</h2>
+      
+      <div class="testimonial-box">
+        <p>"Hiring Travis for our holiday party was the best decision! He was communicative, easy to work with, understood exactly what we wanted, and tailored the show to our crowd. Two weeks later, I'm still hearing how much people loved his performance."</p>
+        <cite>— Greta C., Corporate Event Planner</cite>
+      </div>
+      
+      <div class="testimonial-box">
+        <p>"Travis was super easy to work with—professional, flexible, and a great communicator. He tailored his performance to our group and made sure everyone was engaged. Our guests are still talking about his magic weeks later!"</p>
+        <cite>— Charlie R., Private Event Host</cite>
+      </div>
+      
+      <div class="testimonial-box">
+        <p>"Travis was funny, chill, and incredibly talented. He remembered our names throughout the show, which made the experience feel personal and special. Everyone was blown away by his tricks, and he made our event truly memorable."</p>
+        <cite>— Citlalli B., Wedding Planner</cite>
+      </div>
+    </section>
+
+    <!-- PRESS PHOTOS -->
+    <section class="epk-section">
+      <h2>Press Photos</h2>
+      <p>High-resolution photos available for promotional use. Right-click to download.</p>
+      
+      <div class="press-photos">
+        <div class="press-photo">
+          <img src="assets/Main Headshot.jpg" alt="Travis Kim professional headshot">
+          <p class="caption">Professional Headshot</p>
+        </div>
+        
+        <div class="press-photo">
+          <img src="assets/Audience is stunned and in awe of travis doing a magic trick close up.jpg" alt="Audience amazed by Travis Kim's magic">
+          <p class="caption">Audience Reaction - Close-Up Magic</p>
+        </div>
+        
+        <div class="press-photo">
+          <img src="assets/Travis is personable and impresses crowds well and leaves them feeling happy.jpg" alt="Travis Kim performing table magic">
+          <p class="caption">Interactive Table Magic Performance</p>
+        </div>
+        
+        <div class="press-photo">
+          <img src="assets/Corporate Party person reacts strongly and loves magic.JPG" alt="Corporate event guest reacting to magic">
+          <p class="caption">Corporate Event Entertainment</p>
+        </div>
+        
+        <div class="press-photo">
+          <img src="assets/Magic Castle Close Up Gallery Photo 1.jpg" alt="Travis Kim at The Magic Castle">
+          <p class="caption">The Magic Castle Close-Up Gallery</p>
+        </div>
+        
+        <div class="press-photo">
+          <img src="assets/Family friendly and and corporate events love travis kim.jpg" alt="Family-friendly magic performance">
+          <p class="caption">Family-Friendly Entertainment</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNICAL REQUIREMENTS -->
+    <section class="epk-section">
+      <h2>Technical Requirements</h2>
+      <div class="tech-specs">
+        <h3>Performance Space Requirements</h3>
+        <ul>
+          <li><strong>Space Needed:</strong> Minimal - Can perform in any venue with guest circulation space</li>
+          <li><strong>Setup Time:</strong> None required (self-contained performance)</li>
+          <li><strong>Performance Duration:</strong> Flexible - 1 to 3 hours of strolling/table magic</li>
+          <li><strong>Audience Size:</strong> Ideal for 20-200 guests (performs for small groups of 5-10 at a time)</li>
+        </ul>
+        
+        <h3>Technical Needs</h3>
+        <ul>
+          <li><strong>Sound System:</strong> Not required (intimate close-up performances)</li>
+          <li><strong>Lighting:</strong> Standard venue lighting (no special lighting needed)</li>
+          <li><strong>Stage/Platform:</strong> Not required (performs at guest level)</li>
+          <li><strong>Power/Electrical:</strong> Not required (no technical setup needed)</li>
+        </ul>
+        
+        <h3>What's Included</h3>
+        <ul>
+          <li>All performance materials and props</li>
+          <li>Professional attire (suit/formal wear or event-appropriate dress)</li>
+          <li>Pre-event consultation to customize performance</li>
+          <li>Liability insurance available upon request</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- BOOKING & CONTACT -->
+    <section class="epk-section">
+      <h2>Booking Information</h2>
+      
+      <h3>Availability</h3>
+      <p>Travis performs throughout the Pacific Northwest and is available for:</p>
+      <ul>
+        <li>Weekend and weekday events</li>
+        <li>Daytime and evening performances</li>
+        <li>Single performances or multi-day engagements</li>
+        <li>Local Seattle events and destination performances</li>
+      </ul>
+      
+      <h3>How to Book</h3>
+      <p>For booking inquiries, rates, and availability:</p>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:travis@closeuplab.com" style="color: #ffd700;">travis@closeuplab.com</a></li>
+        <li><strong>GigSalad Profile:</strong> <a href="https://www.gigsalad.com/magician_travis_kim_seattle" target="_blank" style="color: #ffd700;">www.gigsalad.com/magician_travis_kim_seattle</a></li>
+        <li><strong>Response Time:</strong> Within 24 hours</li>
+      </ul>
+      
+      <div class="tech-specs" style="margin-top: 25px;">
+        <h3>What to Include in Your Inquiry</h3>
+        <ul>
+          <li>Event date and time</li>
+          <li>Event location (city/venue)</li>
+          <li>Expected guest count</li>
+          <li>Event type (corporate, wedding, private party, etc.)</li>
+          <li>Desired performance duration</li>
+          <li>Any special requests or considerations</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- MEDIA LINKS -->
+    <section class="epk-section">
+      <h2>Media & Marketing Assets</h2>
+      
+      <h3>Video Content</h3>
+      <p>Performance videos and promotional content available upon request.</p>
+      
+      <h3>Social Proof</h3>
+      <ul>
+        <li><strong>GigSalad Reviews:</strong> <a href="https://www.gigsalad.com/magician_travis_kim_seattle" target="_blank" style="color: #ffd700;">View 12+ Five-Star Reviews</a></li>
+        <li><strong>Featured Clients:</strong> Microsoft, Fred Hutchinson Cancer Center, Card Kingdom, Magic 2 Magicians, SANCA</li>
+      </ul>
+      
+      <div class="download-section" style="margin-top: 30px;">
+        <h3 style="color: #ffd700; margin-top: 0;">Download Press Kit Package</h3>
+        <p style="color: #ccc;">Complete press kit with high-res photos, logos, and promotional materials</p>
+        <p style="font-size: 0.9rem; color: #999;">Contact <a href="mailto:travis@closeuplab.com" style="color: #ffd700;">travis@closeuplab.com</a> for downloadable press kit materials</p>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="epk-section" style="text-align: center; border-top: 2px solid #333; padding-top: 30px; margin-top: 50px;">
+      <p style="color: #999; font-size: 0.9rem;">Electronic Press Kit - Last Updated January 2026</p>
+      <p style="color: #999; font-size: 0.9rem;">Travis Kim Magic Entertainment • Seattle, WA</p>
+      <p style="color: #999; font-size: 0.9rem;"><a href="mailto:travis@closeuplab.com" style="color: #ffd700;">travis@closeuplab.com</a></p>
+    </footer>
+  </div>
+</body>
+</html>
