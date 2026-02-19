@@ -75,10 +75,14 @@
 	background: #fff;
 	padding: 8px;
 	border-radius: 8px;
+	height: 64px;
+	width: auto;
+	object-fit: contain;
+	box-sizing: border-box;
 }
 :root{--accent:#fff;--dark:#1a1a1a;--muted:#ccc}
 *{box-sizing:border-box}
-body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;margin:0;color:#eee;background:#181818}
+body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;margin:0;color:#eee;background:#0B0D10}
 /* Removed star-canvas for simple dark background */
 header, main, footer, .hero, .container, .about, .gallery, .testimonials, .site-footer {
 	position: relative;
