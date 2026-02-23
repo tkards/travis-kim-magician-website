@@ -1,3 +1,35 @@
+/* Instagram-style gallery grid for gallery page */
+.insta-gallery {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 18px;
+	margin: 2.5rem 0 3rem 0;
+}
+/* Instagram-style gallery grid for gallery page */
+.insta-gallery img {
+	width: 100%;
+	aspect-ratio: 1/1;
+	object-fit: cover;
+	border-radius: 10px;
+	box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+	transition: transform 0.18s cubic-bezier(.4,2,.6,1), box-shadow 0.18s;
+	background: #181818;
+}
+.insta-gallery img:hover {
+	transform: scale(1.04) translateY(-2px);
+	box-shadow: 0 6px 24px rgba(0,0,0,0.28);
+	z-index: 2;
+}
+@media (max-width: 900px) {
+	.insta-gallery {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@media (max-width: 600px) {
+	.insta-gallery {
+		grid-template-columns: 1fr;
+	}
+}
 /* Make FAQ section links white */
 .faq-item a {
 	color: #fff;
@@ -95,7 +127,7 @@ header, main, footer, .hero, .container, .about, .gallery, .testimonials, .site-
 .container{max-width:1000px;margin:0 auto;padding:28px}
 .hero{position:relative;height:60vh;min-height:420px;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .hero-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(0.65);}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.18))}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.01),rgba(0,0,0,.04))}
 .hero-content{position:relative;z-index:2;text-align:center;color:#fff;padding:20px}
 .hero-content h1, .hero-content .lead, .hero-content .sub {
 	text-shadow:
