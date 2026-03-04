@@ -35,14 +35,14 @@
           <input type="text" id="lastName" name="last_name" placeholder="Last name" required>
         </label>
 
+      <label id="eventDateLabel">Event Date and Time <span class="required-asterisk">*</span>
+        <input type="text" id="eventDate" name="event_date" placeholder="July 23, 2026 at 7pm, or TBD" required>
+      </label>
       <label id="lengthLabel">Length of performance <span class="required-asterisk">*</span>
         <input type="text" id="length" name="length" placeholder="E.g., 1 hour, flexible, etc." required>
       </label>
       <label id="guestsLabel">Approx. guest count <span class="required-asterisk">*</span>
         <input type="number" id="guests" name="guests" min="1" placeholder="E.g., 50" required>
-      </label>
-      <label id="eventDateLabel">Event Date and Time <span class="required-asterisk">*</span>
-        <input type="text" id="eventDate" name="event_date" placeholder="E.g., March 15, 2026 or 7pm, TBD" required>
       </label>
       <style>
         .form-actions {
@@ -74,7 +74,7 @@
       </label>
 
       <label>Message
-        <textarea id="message" name="message" rows="4" placeholder="Questions or anything you'd like us to know"></textarea>
+        <textarea id="message" name="message" rows="4" placeholder="Questions of anything you'd like Travis to know"></textarea>
       </label>
 
       <div class="form-actions">
