@@ -22,30 +22,28 @@
     <p>Thank you for your interest! Please fill the form below to create an email booking request, or click the direct email button to open your mail client. Best wishes, Travis</p>
 
     <form id="bookingForm">
+      <label id="nameLabel">Name <span class="required-asterisk">*</span>
+        <input type="text" id="userName" name="user_name" placeholder="Your name" required>
+      </label>
       <label id="emailLabel">Your email <span class="required-asterisk">*</span>
-        <input type="email" id="userEmail" name="user_email" placeholder="your@email.com" required>
+        <input type="text" id="userEmail" name="user_email" placeholder="your@email.com" required>
       </label>
       <label id="phoneLabel">Phone number
-        <input type="tel" id="userPhone" name="user_phone" placeholder="Optional">
+        <input type="text" id="userPhone" name="user_phone" placeholder="Leave your number if you'd like a call to discuss your event (optional)">
       </label>
-        <label id="firstNameLabel">First name <span class="required-asterisk">*</span>
-          <input type="text" id="firstName" name="first_name" placeholder="First name" required>
-        </label>
-        <label id="lastNameLabel">Last name <span class="required-asterisk">*</span>
-          <input type="text" id="lastName" name="last_name" placeholder="Last name" required>
-        </label>
-
       <label id="eventDateLabel">Event Date and Time <span class="required-asterisk">*</span>
         <input type="text" id="eventDate" name="event_date" placeholder="July 23, 2026 at 7pm, or TBD" required>
       </label>
-        <label id="eventLocationLabel">Event Location/Address <span class="required-asterisk">*</span>
-          <input type="text" id="eventLocation" name="event_location" placeholder="Venue, address, city, etc." required>
-        </label>
-      <label id="lengthLabel">Length of performance <span class="required-asterisk">*</span>
-        <input type="text" id="length" name="length" placeholder="E.g., 1 hour, flexible, etc." required>
+      <label>Performance type <span class="required-asterisk">*</span>
+        <select id="performance" name="performance" required>
+          <option value="Strolling Magic">Strolling Magic</option>
+          <option value="Sit-down Parlour Show">Sit-down Parlour Show</option>
+          <option value="Something Else">Something Else</option>
+          <option value="Not Sure">Not Sure</option>
+        </select>
       </label>
-      <label id="guestsLabel">Approx. guest count <span class="required-asterisk">*</span>
-        <input type="number" id="guests" name="guests" min="1" placeholder="E.g., 50" required>
+      <label>Message <span class="required-asterisk">*</span>
+        <textarea id="message" name="message" rows="4" placeholder="Tell us a about the event you're planning!" required></textarea>
       </label>
       <style>
         .form-actions {
@@ -67,27 +65,15 @@
         }
       </style>
 
-      <label>Performance type
-        <select id="performance" name="performance">
-          <option value="Strolling Magic">Strolling Magic</option>
-          <option value="Sit-down Parlour Show">Sit-down Parlour Show</option>
-          <option value="Something Else">Something Else</option>
-          <option value="Not Sure">Not Sure</option>
-        </select>
-      </label>
-
-      <label>Message
-        <textarea id="message" name="message" rows="4" placeholder="Questions or anything you'd like Travis to know."></textarea>
-      </label>
+      
 
       <div class="form-actions">
-        <button class="btn primary" type="submit">Send Booking Email</button>
-        <a class="btn ghost" href="mailto:travis@closeuplab.com?subject=Booking%20Inquiry%20for%20Travis%20Kim">Open email client</a>
+        <button class="btn primary" type="submit">Submit Form</button>
         <a class="btn ghost" href="index.html" style="margin-left:1rem;">Return to Main Page</a>
       </div>
     </form>
 
-    <p class="note">If your mail client doesn't open, copy this email: <a href="mailto:travis@closeuplab.com">travis@closeuplab.com</a></p>
+    
   </main>
 
   <script>
