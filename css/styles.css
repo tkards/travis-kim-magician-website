@@ -161,7 +161,17 @@ header, main, footer, .hero, .container, .about, .gallery, .testimonials, .site-
 }
 .btn.ghost{background:transparent;border:2px solid rgba(255,255,255,.9);color:#fff}
 .about{display:flex;gap:20px;align-items:center;padding:36px 0}
-.headshot{width:250px;height:auto;border-radius:8px}
+.headshot{
+	width:250px;
+	height:auto;
+	border-radius:8px;
+	-webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 14%, #000 86%, transparent 100%);
+	mask-image: linear-gradient(to bottom, transparent 0%, #000 14%, #000 86%, transparent 100%);
+	-webkit-mask-size: 100% 100%;
+	mask-size: 100% 100%;
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
+}
 .about h2{margin-top:0}
 .about a{
 	color: #fff;
