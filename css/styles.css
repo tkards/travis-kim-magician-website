@@ -151,6 +151,17 @@ header, main, footer, .hero, .container, .about, .gallery, .testimonials, .site-
 .hero{position:relative;height:60vh;min-height:420px;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .hero-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(0.65);-webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 72%,transparent 100%);mask-image:linear-gradient(to bottom,#000 0%,#000 72%,transparent 100%);-webkit-mask-size:100% 100%;mask-size:100% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.12),rgba(0,0,0,.42))}
+.hero::after{
+	content:"";
+	position:absolute;
+	left:0;
+	right:0;
+	bottom:0;
+	height:30%;
+	background:linear-gradient(to bottom,rgba(11,13,16,0),#0B0D10 90%);
+	pointer-events:none;
+	z-index:1;
+}
 .hero-content{position:relative;z-index:2;text-align:center;color:#fff;padding:20px}
 .hero-content h1, .hero-content .lead, .hero-content .sub {
 	text-shadow:
@@ -440,4 +451,17 @@ input[type=text],input[type=date],input[type=number],textarea{width:100%;padding
 .voila-feature > div > div,
 .haunted-soiree-feature > div > div {
 	max-width: none !important;
+}
+
+/* Keep hero proportions consistent on tall/narrow viewports (mobile + in-between + vertical monitors) */
+@media (max-aspect-ratio: 5/4) {
+	.hero {
+		height: auto !important;
+		min-height: 0 !important;
+		aspect-ratio: 16 / 5;
+	}
+
+	.hero-image {
+		object-position: center 32%;
+	}
 }
