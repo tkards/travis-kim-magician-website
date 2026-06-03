@@ -34,6 +34,29 @@
 .faq-item a {
 	color: #fff;
 }
+.faq-layout {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	flex-wrap: nowrap;
+	gap: 1.5rem;
+}
+.faq-content {
+	flex: 1 1 0;
+	min-width: 0;
+	text-align: left;
+}
+.faq-content ul {
+	margin-top: 0.35rem;
+	padding-left: 1.25rem;
+}
+.faq-tiana-photo {
+	flex: 0 0 clamp(202px, 43.2%, 432px);
+	width: clamp(202px, 43.2%, 432px);
+	max-width: 432px;
+	border-radius: 12px;
+	align-self: center;
+}
 /* Make about section heading more bold and noticeable */
 .about-title {
 	font-size: 2.1rem;
@@ -390,12 +413,18 @@ input[type=text],input[type=date],input[type=number],textarea{width:100%;padding
 	gap: 1.1em !important;
 }
 
-.bumbershoot-feature > img,
 .voila-feature > img,
 .haunted-soiree-feature > img {
 	flex: 0 0 clamp(130px, 40%, 300px);
 	width: clamp(130px, 40%, 300px) !important;
 	max-width: 300px !important;
+	margin: 0 !important;
+}
+
+.bumbershoot-feature > img {
+	flex: 0 0 clamp(146px, 44.8%, 336px);
+	width: clamp(146px, 44.8%, 336px) !important;
+	max-width: 336px !important;
 	margin: 0 !important;
 }
 
