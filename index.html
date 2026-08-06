@@ -96,7 +96,14 @@
   <!-- Removed starry background canvas for simple dark background -->
   <header class="hero">
     <div class="hero-top-name">Travis Kim</div>
-    <a class="hero-top-cta" href="booking.html">CHECK AVAILABILITY</a>
+    <div class="hero-top-actions">
+      <nav class="hero-top-nav" aria-label="Section navigation">
+        <a class="hero-top-link" href="#main-content">EVENTS</a>
+        <a class="hero-top-link" href="#about">ABOUT</a>
+        <a class="hero-top-link" href="#experience">THE EXPERIENCE</a>
+      </nav>
+      <a class="hero-top-cta" href="booking.html">CHECK AVAILABILITY</a>
+    </div>
     <div class="hero-overlay"></div>
     <img class="hero-image" src="assets/New Magic Photos/seattle magician travis kim corporate event 2.JPG" alt="Seattle magician Travis Kim performing close-up magic for guests at a Seattle event, engaging the audience with sleight-of-hand.">
     <div class="hero-copy">
@@ -114,14 +121,15 @@
       <img class="hero-logo" src="assets/Trusted By Logos/card_kingdom_white.png" alt="Card Kingdom logo">
       <img class="hero-logo" src="assets/Trusted By Logos/gian logo.webp" alt="Gian logo">
       <img class="hero-logo" src="assets/Trusted By Logos/fred_hutch_white.png" alt="Fred Hutch logo">
+      <img class="hero-logo hero-logo-bumbershoot" src="assets/Trusted By Logos/Bumbershoot_Staggered_Wordmark2_Vert_Digital_Black.webp" alt="Bumbershoot logo">
       <img class="hero-logo" src="assets/Trusted By Logos/bouldering_project_logo_white.png" alt="The Bouldering Project logo">
     </div>
     <a class="hero-scroll-arrow" href="#main-content" aria-label="Scroll down to main content"><span class="hero-scroll-arrow-label">learn more</span><span class="hero-scroll-arrow-icon" aria-hidden="true"><span class="hero-scroll-arrow-shaft"></span></span></a>
   </header>
 
   <main class="container" id="main-content">
-    <p class="occasion-line">CURATED FOR EVERY OCCASSION</p>
-    <p class="occasion-subtext">interactive magic that brings guests together and leaves lasting impressions</p>
+    <p class="occasion-line" id="events">CURATED FOR EVERY OCCASSION</p>
+    <p class="occasion-subtext">Interactive magic that brings guests together and leaves lasting impressions.</p>
     <div class="occasion-row" aria-label="Travis Kim occasion row">
       <div class="occasion-card">
         <img src="assets/New Magic Photos/seattle magician travis kim corporate 20.JPG" alt="Travis Kim performing close-up magic at a Seattle corporate event">
@@ -148,13 +156,39 @@
     <div class="occasion-cta-wrap">
       <a class="occasion-cta hero-copy-cta" href="booking.html">CHECK AVAILABILITY</a>
     </div>
-    <section class="about">
+    <section class="about" id="about">
       <img class="headshot" src="assets/New Magic Photos/seattle magician travis kim headshot dice.JPG?v=20260805" alt="Professional headshot of Seattle magician Travis Kim, expert in close-up sleight-of-hand magic for events and parties.">
       <div>
           <h2 class="about-title" style="font-family: Inter, system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: clamp(1.44rem, 1.9vw, 2rem); font-weight: 600; letter-spacing: 0.34em; color: #d2b172;">TRUSTED BY CLIENTS.<br><span style="font-family: 'Cormorant Garamond', 'Times New Roman', serif; font-size: clamp(2.4rem, 6.8vw, 5.2rem); font-weight: 500; letter-spacing: -0.012em; color: #fff; display: block; line-height: 0.95;">Recognized by Peers.</span></h2>
         <p style="font-size: 1.15em;">As the resident magician at Haunted Soirée Seattle and a headliner at the world-famous Magic Castle in Hollywood, Travis blends world-class sleight of hand with humor and charm, leaving guests amazed, engaged, and talking long after the event ends.</p>
         <p style="font-size: 1.15em;">Every performance is tailored to your event, creating interactive moments that feel personal, effortless, and impossible to forget.</p>
         <p style="font-size: 1.4em; margin-bottom: 0.1em; line-height: 1.1;"><span style="color: #FFD700;">★★★★★</span> <span style="color: #fff; font-size: 0.75em; font-style: italic;">"People are still raving about him! He read the audience well, engaged everyone, and his close-up skills are truly impressive. He knows how to banter, and keep the energy flowing, and can work easy with a diverse group." - Card Kingdom, Seattle</span></p>
+      </div>
+    </section>
+
+    <section class="experience-intro" id="experience" aria-labelledby="experience-title">
+      <p class="occasion-line">THE EXPERIENCE</p>
+      <h2 class="experience-title" id="experience-title">More Than Magic. Genuine Connection.</h2>
+      <p class="experience-subtext">Close-up magic designed to bring people together and create moments that last.</p>
+      <div class="experience-photo-row" aria-label="Experience photo highlights">
+        <div class="experience-photo-card">
+          <img src="assets/New Magic Photos/seattle magician travis kim pike place 1 - original.JPG" alt="Travis Kim performing close-up magic at Pike Place in Seattle">
+          <div class="experience-photo-caption">Genuine Connection</div>
+          <p class="experience-photo-copy">Magic isn't performed <em>at</em> your guests. It's shared with them through conversation, humor, and unforgettable interactions that naturally bring people together.</p>
+        </div>
+        <div class="experience-photo-card">
+          <img src="assets/New Magic Photos/seattle magician travis kim corporate event 5.JPG" alt="Travis Kim performing close-up magic at a Seattle corporate event">
+          <div class="experience-photo-caption">Personalized to Every Event</div>
+          <p class="experience-photo-copy experience-photo-copy-wide">Every performance is thoughtfully tailored to your venue, audience, and celebration, creating an experience that feels seamless, personal, and perfectly suited to the moment.</p>
+        </div>
+        <div class="experience-photo-card">
+          <img src="assets/New Magic Photos/seattle magician travis kim bachelorette shocked.jpg" alt="Guests reacting during a Seattle bachelorette party magic performance by Travis Kim">
+          <div class="experience-photo-caption">Lasting Memories</div>
+          <p class="experience-photo-copy">Long after the event ends, guests are still reliving impossible moments, sharing stories, and asking, "How did he do that?"</p>
+        </div>
+      </div>
+      <div class="experience-cta-wrap">
+        <a class="hero-copy-cta experience-cta" href="booking.html">CHECK AVAILABILITY</a>
       </div>
     </section>
 
