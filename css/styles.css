@@ -439,8 +439,8 @@ header, main, footer, .hero, .container, .about, .gallery, .testimonials, .site-
 }
 .hero-scroll-arrow{
 	position:absolute;
-	right:clamp(62px,9vw,130px);
-	bottom:calc(clamp(52px,8.5vw,116px) + 1.4%);
+	right:clamp(32px,5.2vw,78px);
+	bottom:clamp(56px,8.2vw,112px);
 	z-index:4;
 	display:flex;
 	flex-direction:column;
@@ -448,8 +448,8 @@ header, main, footer, .hero, .container, .about, .gallery, .testimonials, .site-
 	justify-content:flex-end;
 	width:auto;
 	min-width:30px;
-	height:64px;
-	gap:12px;
+	height:auto;
+	gap:10px;
 	line-height:1;
 	text-decoration:none;
 	color:rgba(255,255,255,0.94);
@@ -459,24 +459,25 @@ header, main, footer, .hero, .container, .about, .gallery, .testimonials, .site-
 
 .hero-scroll-arrow-label{
 	font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
-	font-size:0.68rem;
-	font-weight:600;
-	letter-spacing:0.16em;
+	font-size:0.92rem;
+	font-weight:700;
+	letter-spacing:0.18em;
 	text-transform:uppercase;
 	white-space:nowrap;
+	transform:translateY(-8px);
 }
 
 .hero-scroll-arrow-icon{
 	display:flex;
 	flex-direction:column;
 	align-items:center;
-	animation:hero-scroll-bounce 2.8s ease-in-out infinite;
+	animation:hero-scroll-bounce 2.4s ease-in-out infinite;
 }
 
 .hero-scroll-arrow-shaft{
 	display:block;
 	width:2px;
-	height:39px;
+	height:52px;
 	border-radius:99px;
 	background:currentColor;
 	opacity:0.96;
@@ -484,8 +485,8 @@ header, main, footer, .hero, .container, .about, .gallery, .testimonials, .site-
 
 .hero-scroll-arrow-icon::after{
 	content:"";
-	width:12px;
-	height:12px;
+	width:14px;
+	height:14px;
 	margin-top:-1px;
 	border-right:2px solid currentColor;
 	border-bottom:2px solid currentColor;
@@ -503,7 +504,7 @@ header, main, footer, .hero, .container, .about, .gallery, .testimonials, .site-
 		transform:translateY(0);
 	}
 	50% {
-		transform:translateY(12px);
+		transform:translateY(16px);
 	}
 }
 
