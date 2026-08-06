@@ -144,6 +144,8 @@
 :root{--accent:#fff;--dark:#1a1a1a;--muted:#ccc}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
+html,
+body{overflow-x:hidden}
 body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;margin:0;color:#eee;background:#0B0D10}
 @media (prefers-reduced-motion: reduce) {
 	html{scroll-behavior:auto}
@@ -153,7 +155,7 @@ header, main, footer, .hero, .container, .about, .gallery, .testimonials, .site-
 	position: relative;
 	z-index: 1;
 }
-.container{max-width:1000px;margin:0 auto;padding:28px}
+.container{max-width:1280px;margin:0 auto;padding:28px clamp(24px,4vw,48px)}
 .hero{position:relative;height:auto;min-height:0;display:block;overflow:hidden}
 .hero-image{position:relative;display:block;width:100%;height:auto;object-fit:contain;object-position:center;max-height:none;filter:none;-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 16%,#000 76%,transparent 100%);mask-image:linear-gradient(to right,transparent 0%,#000 16%,#000 76%,transparent 100%);-webkit-mask-size:100% 100%;mask-size:100% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;}
 .hero-overlay{display:none}
@@ -276,6 +278,120 @@ header, main, footer, .hero, .container, .about, .gallery, .testimonials, .site-
 	background:radial-gradient(ellipse at center, rgba(0,0,0,0.38) 0%, rgba(0,0,0,0.22) 38%, rgba(0,0,0,0.1) 64%, rgba(0,0,0,0) 100%);
 	filter:blur(8px);
 	pointer-events:none;
+}
+.occasion-line{
+	margin:0.35rem 0 0.55rem;
+	font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
+	font-size:clamp(1.44rem,1.9vw,2rem);
+	font-weight:600;
+	letter-spacing:0.34em;
+	text-transform:uppercase;
+	text-align:center;
+	white-space:nowrap;
+	color:#d2b172;
+	text-shadow:0 2px 8px rgba(0,0,0,.7);
+}
+.occasion-subtext{
+	margin:0 0 1.7rem;
+	font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
+	font-size:clamp(0.98rem,1.2vw,1.18rem);
+	font-weight:400;
+	letter-spacing:0.01em;
+	line-height:1.6;
+	text-align:center;
+	color:rgba(255,255,255,0.76);
+	text-wrap:balance;
+}
+.occasion-row{
+	display:grid;
+	grid-template-columns:repeat(3,minmax(0,1fr));
+	gap:clamp(2.4rem,4.2vw,3.6rem);
+	width:min(calc(100vw - 0.1rem), 1620px);
+	max-width:none;
+	margin:0 0 1.25rem;
+	padding:0 clamp(0.9rem,2.1vw,1.6rem);
+	align-items:stretch;
+	justify-content:center;
+	box-sizing:border-box;
+	margin-left:50%;
+	transform:translateX(-50%);
+}
+
+.occasion-card{
+	position:relative;
+	overflow:hidden;
+}
+
+.occasion-card::after{
+	content:"";
+	position:absolute;
+	left:0;
+	right:0;
+	bottom:0;
+	height:58%;
+	background:linear-gradient(180deg, rgba(7,10,18,0) 0%, rgba(7,10,18,0.18) 20%, rgba(7,10,18,0.46) 46%, rgba(7,10,18,0.82) 74%, rgba(7,10,18,0.97) 100%);
+	pointer-events:none;
+}
+
+.occasion-card-caption{
+	margin:0;
+	color:#f3eee4;
+	font-family:"Playfair Display", Georgia, serif;
+	font-size:clamp(1.48rem,2.2vw,2.28rem);
+	font-weight:400;
+	line-height:1.1;
+	text-shadow:0 2px 10px rgba(0,0,0,0.45);
+}
+
+.occasion-card-subtext{
+	margin:0.7rem 0 0;
+	color:rgba(243,238,228,0.9);
+	font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
+	font-size:clamp(0.85rem,1.15vw,1.06rem);
+	font-weight:300;
+	line-height:1.45;
+	text-shadow:0 2px 8px rgba(0,0,0,0.45);
+}
+
+.occasion-card-text{
+	position:absolute;
+	left:clamp(1rem,2vw,1.5rem);
+	right:clamp(1rem,2vw,1.5rem);
+	bottom:clamp(0.9rem,2vw,1.35rem);
+	z-index:1;
+}
+
+.occasion-card-caption::after{
+	content:"";
+	display:block;
+	width:3.05rem;
+	height:2px;
+	margin-top:0.6rem;
+	margin-bottom:0.1rem;
+	background:#c9a45b;
+	box-shadow:0 0 10px rgba(201,164,91,0.18);
+}
+
+.occasion-card img{
+	width:100%;
+	height:auto;
+	object-fit:contain;
+	object-position:center;
+	border-radius:0;
+	box-shadow:none;
+	display:block;
+}
+
+.occasion-cta-wrap{
+	display:flex;
+	justify-content:center;
+	margin:1.3rem 0 2.2rem;
+}
+
+.occasion-cta{
+	display:inline-flex;
+	align-items:center;
+	justify-content:center;
 }
 .hero-logo-row{
 	position:absolute;
@@ -491,6 +607,68 @@ header, main, footer, .hero, .container, .about, .gallery, .testimonials, .site-
 		letter-spacing: 0.16em;
 	}
 
+	.occasion-line {
+		font-size: clamp(0.84rem, 3.8vw, 1.06rem);
+		letter-spacing: 0.12em;
+		margin: 0.2rem 0 0.45rem;
+	}
+
+	.occasion-subtext {
+		margin: 0 0 1.1rem;
+		font-size: 0.86rem;
+		line-height: 1.45;
+		padding: 0 0.8rem;
+	}
+
+	.occasion-row {
+		grid-template-columns: 1fr;
+		gap: 1.8rem;
+		width: 100%;
+		margin: 0 auto 0.9rem;
+		padding: 0;
+		justify-items: center;
+		justify-content: center;
+		transform: none;
+	}
+
+	.occasion-card {
+		width: min(92vw, 520px);
+	}
+
+	.occasion-card::after {
+		height: 52%;
+	}
+
+	.occasion-card-caption {
+		font-size: 1.62rem;
+		line-height: 1.05;
+	}
+
+	.occasion-card-subtext {
+		margin-top: 0.6rem;
+		font-size: 0.98rem;
+		line-height: 1.42;
+	}
+
+	.occasion-card-text{
+		left: 1rem;
+		right: 1rem;
+		bottom: 0.95rem;
+	}
+
+	.occasion-cta-wrap{
+		margin:1rem 0 1.8rem;
+	}
+
+	.occasion-card-caption::after {
+		width: 2.72rem;
+		margin-top: 0.45rem;
+	}
+
+	.occasion-row img {
+		height: auto;
+	}
+
 	.hero-trust-line {
 		position: static;
 		left: auto;
@@ -623,17 +801,30 @@ header, main, footer, .hero, .container, .about, .gallery, .testimonials, .site-
 	font-weight: 700;
 }
 .btn.ghost{background:transparent;border:2px solid rgba(255,255,255,.9);color:#fff}
-.about{display:flex;gap:20px;align-items:center;padding:36px 0}
+.about{
+	display:flex;
+	flex-wrap:nowrap;
+	gap:clamp(28px,3vw,56px);
+	align-items:center;
+	padding:36px 0 48px;
+	width:100%;
+}
 .headshot{
-	width:250px;
+	width:clamp(320px,28vw,560px);
+	max-width:42%;
 	height:auto;
 	border-radius:8px;
+	flex:0 0 auto;
 	-webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 14%, #000 86%, transparent 100%);
 	mask-image: linear-gradient(to bottom, transparent 0%, #000 14%, #000 86%, transparent 100%);
 	-webkit-mask-size: 100% 100%;
 	mask-size: 100% 100%;
 	-webkit-mask-repeat: no-repeat;
 	mask-repeat: no-repeat;
+}
+.about > div{
+	flex:1;
+	min-width:0;
 }
 .about h2{margin-top:0}
 .about a{
