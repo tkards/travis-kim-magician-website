@@ -24,64 +24,50 @@
 </head>
 <body>
   <main class="container booking-page">
-    <a href="index.html" style="color:#fff;text-decoration:underline;margin-bottom:0.1rem;display:inline-block;">Return to Main Page</a>
-    <br style="line-height:0.2;"><br style="line-height:0.2;">
-    <h1 style="margin-top: 0.1em;">Book Magician Travis Kim</h1>
-    <p>Thank you for your interest! Please fill the form below to create an email booking request, or click the direct email button to open your mail client. Best wishes, Travis</p>
+    <a href="index.html" class="booking-return-link">← RETURN TO MAIN PAGE</a>
 
-    <form id="bookingForm">
-      <label id="nameLabel">Name <span class="required-asterisk">*</span>
-        <input type="text" id="userName" name="user_name" placeholder="Your name" required>
-      </label>
-      <label id="emailLabel">Your email <span class="required-asterisk">*</span>
-        <input type="text" id="userEmail" name="user_email" placeholder="your@email.com" required>
-      </label>
-      <label id="phoneLabel">Phone number
-        <input type="text" id="userPhone" name="user_phone" placeholder="Leave your number if you'd like a call to discuss your event (optional)">
-      </label>
-      <label id="eventDateLabel">Event Date and Time <span class="required-asterisk">*</span>
-        <input type="text" id="eventDate" name="event_date" placeholder="July 23, 2026 at 7pm, or TBD" required>
-      </label>
-      <label>Performance type <span class="required-asterisk">*</span>
-        <select id="performance" name="performance" required>
-          <option value="Strolling Magic">Strolling Magic</option>
-          <option value="Sit-down Parlour Show">Sit-down Parlour Show</option>
-          <option value="Something Else">Something Else</option>
-          <option value="Not Sure">Not Sure</option>
-        </select>
-      </label>
-      <label>Message <span class="required-asterisk">*</span>
-        <textarea id="message" name="message" rows="4" placeholder="Tell us a about the event you're planning! Example: Private party in Seattle, about 30 guests, cocktail style from 7–9pm." required></textarea>
-      </label>
-      <style>
-        .form-actions {
-          display: flex;
-          gap: 1rem;
-          justify-content: space-between;
-        }
-        .required-asterisk {
-          color: red;
-        }
-        .missing-field .required-asterisk {
-          color: #fff;
-          background: red;
-          border-radius: 50%;
-          padding: 0 6px;
-        }
-        a[href^="mailto:"] {
-          color: #fff !important;
-        }
-      </style>
+    <section class="booking-layout" aria-labelledby="booking-title">
+      <figure class="booking-image-wrap">
+        <img class="booking-image" src="assets/New Magic Photos/seattle pike place magician travis kim 2.JPG" alt="Travis Kim performing at Pike Place with cascading cards and guests reacting behind him.">
+      </figure>
 
-      
-
-      <div class="form-actions">
-        <button class="btn primary" type="submit">Submit Form</button>
-        <a class="btn ghost" href="index.html" style="margin-left:1rem;">Return to Main Page</a>
+      <div class="booking-intro">
+        <p class="booking-eyebrow">BOOKING INQUIRY</p>
+        <h1 id="booking-title" class="booking-title">Tell Me About Your Event.</h1>
+        <p class="booking-description">Share a few details below and I&apos;ll be in touch to discuss availability and create an experience tailored to your celebration.</p>
       </div>
-      <p style="margin-top:1.2em;color:#fff;">Typically books 1-3 hour performances for events of 10-300 guests.</p>
-      </div>
-    </form>
+
+      <form id="bookingForm" class="booking-form">
+        <label id="nameLabel">Name <span class="required-asterisk">*</span>
+          <input type="text" id="userName" name="user_name" placeholder="Your name" required>
+        </label>
+        <label id="emailLabel">Your email <span class="required-asterisk">*</span>
+          <input type="text" id="userEmail" name="user_email" placeholder="your@email.com" required>
+        </label>
+        <label id="phoneLabel">Phone number
+          <input type="text" id="userPhone" name="user_phone" placeholder="Leave your number if you'd like a call to discuss your event (optional)">
+        </label>
+        <label id="eventDateLabel">Event Date and Time <span class="required-asterisk">*</span>
+          <input type="text" id="eventDate" name="event_date" placeholder="July 23, 2026 at 7pm, or TBD" required>
+        </label>
+        <label>Performance type <span class="required-asterisk">*</span>
+          <select id="performance" name="performance" required>
+            <option value="Strolling Magic">Strolling Magic</option>
+            <option value="Sit-down Parlour Show">Sit-down Parlour Show</option>
+            <option value="Something Else">Something Else</option>
+            <option value="Not Sure">Not Sure</option>
+          </select>
+        </label>
+        <label>Message <span class="required-asterisk">*</span>
+          <textarea id="message" name="message" rows="4" placeholder="Tell us a about the event you're planning! Example: Private party in Seattle, about 30 guests, cocktail style from 7–9pm." required></textarea>
+        </label>
+
+        <div class="form-actions">
+          <button class="hero-copy-cta booking-submit" type="submit">Send Inquiry</button>
+        </div>
+        <p class="booking-note">Most events feature 1&ndash;3 hours of performance, thoughtfully tailored to your guest count and schedule.</p>
+      </form>
+    </section>
 
     
   </main>
