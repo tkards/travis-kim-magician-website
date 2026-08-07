@@ -574,6 +574,286 @@ header, main, footer, .hero, .container, .about, .gallery, .testimonials, .site-
 	background:rgba(255,255,255,0.14);
 	border-color:#fff;
 }
+@media (max-width: 1200px) {
+	.hero-top-name {
+		top: 22px;
+		left: 24px;
+		font-size: clamp(2.2rem, 7.4vw, 3.3rem);
+		letter-spacing: 3px;
+	}
+
+	.hero-top-actions {
+		top: 26px;
+		right: 24px;
+		gap: 14px;
+	}
+
+	.hero-top-nav {
+		gap: 16px;
+	}
+
+	.hero-top-link {
+		font-size: 0.78rem;
+		letter-spacing: 0.12em;
+	}
+
+	.hero-top-cta {
+		padding: 11px 14px;
+		font-size: 0.78rem;
+		letter-spacing: 1.2px;
+	}
+
+	.hero-copy {
+		left: clamp(1.2rem, 5.5vw, 3.2rem);
+		max-width: min(30rem, 72vw);
+	}
+
+	.hero .hero-copy .hero-headline {
+		font-size: clamp(2.4rem, 8.2vw, 5.1rem);
+	}
+
+	.hero-subtext {
+		font-size: clamp(0.95rem, 1.45vw, 1.15rem);
+		max-width: 33ch;
+	}
+
+	.hero-trust-line {
+		bottom: 14%;
+		font-size: clamp(0.6rem, 0.88vw, 0.84rem);
+		letter-spacing: 0.22em;
+		white-space: normal;
+		text-align: center;
+		width: min(95vw, 60rem);
+	}
+
+	.hero-logo-row {
+		bottom: 4.3%;
+		gap: clamp(0.65rem, 1.6vw, 1.1rem);
+		width: min(98vw, 70rem);
+		flex-wrap: wrap;
+		padding: 0 0.5rem;
+	}
+
+	.hero-logo {
+		height: clamp(34px, 5.4vw, 70px);
+		max-width: 152px;
+		transform: none !important;
+	}
+
+	.hero-logo:first-child {
+		height: clamp(48px, 7.2vw, 92px);
+		max-width: 196px;
+	}
+
+	.hero-logo-bumbershoot {
+		height: clamp(31px, 5.1vw, 61px);
+		max-width: 132px;
+	}
+
+	.hero-scroll-arrow {
+		right: clamp(20px, 3vw, 36px);
+		bottom: clamp(24px, 4.2vw, 44px);
+	}
+}
+
+@media (max-width: 960px) {
+	.hero {
+		height: auto;
+		padding: 14px 14px 18px;
+	}
+
+	.hero::after {
+		display: none;
+	}
+
+	.hero-top-name {
+		position: static;
+		font-size: clamp(1.9rem, 8vw, 2.9rem);
+		letter-spacing: 2.2px;
+		line-height: 1.04;
+		margin: 0 0 0.4rem;
+	}
+
+	.hero-top-actions {
+		position: static;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.7rem;
+		margin: 0 0 0.9rem;
+	}
+
+	.hero-top-nav {
+		justify-content: flex-start;
+		flex-wrap: wrap;
+		gap: 0.55rem 0.9rem;
+	}
+
+	.hero-top-link {
+		font-size: 0.68rem;
+		letter-spacing: 0.12em;
+	}
+
+	.hero-top-cta {
+		padding: 8px 11px;
+		font-size: 0.66rem;
+		letter-spacing: 1px;
+		border-width: 1.5px;
+	}
+
+	.hero-copy {
+		position: static;
+		left: auto;
+		top: auto;
+		transform: none;
+		max-width: none;
+		margin-top: 0.9rem;
+	}
+
+	.hero-copy::before {
+		display: none;
+	}
+
+	.hero-kicker {
+		font-size: 0.66rem;
+		letter-spacing: 0.2em;
+		margin: 0 0 0.45rem;
+	}
+
+	.hero .hero-copy .hero-headline {
+		font-size: clamp(2rem, 10.2vw, 3.4rem);
+		max-width: 10.5ch;
+	}
+
+	.hero-subtext {
+		margin: 0.75rem 0 1rem;
+		font-size: 0.9rem;
+		line-height: 1.42;
+		max-width: 37ch;
+	}
+
+	.hero-copy-cta {
+		padding: 0.64rem 1rem;
+		font-size: 0.64rem;
+		letter-spacing: 0.16em;
+	}
+
+	.hero-trust-line {
+		position: static;
+		left: auto;
+		bottom: auto;
+		transform: none;
+		margin: 1rem auto 0;
+		padding: 0 8px;
+		font-size: 0.6rem;
+		letter-spacing: 0.18em;
+		text-align: center;
+		white-space: normal;
+	}
+
+	.hero-trust-line::before {
+		display: none;
+	}
+
+	.hero-logo-row {
+		position: static;
+		left: auto;
+		bottom: auto;
+		transform: none;
+		margin: 0.45rem auto 0;
+		padding: 0 8px;
+		width: 100%;
+		max-width: 100%;
+		gap: 0.6rem;
+		flex-wrap: wrap;
+	}
+
+	.hero-logo {
+		height: clamp(33px, 7vw, 68px);
+		max-width: 140px;
+	}
+
+	.hero-logo:first-child {
+		height: clamp(44px, 9.4vw, 92px);
+		max-width: 190px;
+	}
+
+	.hero-scroll-arrow {
+		position: static;
+		right: auto;
+		bottom: auto;
+		margin: 0.65rem auto 0;
+		gap: 7px;
+	}
+
+	.hero-scroll-arrow-label {
+		font-size: 0.56rem;
+		letter-spacing: 0.12em;
+	}
+
+	.hero-scroll-arrow-shaft {
+		height: 28px;
+	}
+
+	.hero-scroll-arrow-icon::after {
+		width: 10px;
+		height: 10px;
+	}
+
+	.about {
+		flex-wrap: wrap;
+		justify-content: center;
+		text-align: center;
+	}
+
+	.headshot {
+		max-width: min(92vw, 520px);
+		width: 100%;
+	}
+
+	.about > div {
+		width: 100%;
+	}
+
+	.faq-layout {
+		flex-wrap: wrap;
+		gap: 1rem;
+	}
+
+	.faq-tiana-photo {
+		flex: 0 1 min(85vw, 400px);
+		width: min(85vw, 400px);
+	}
+
+	.faq-content {
+		text-align: left;
+	}
+
+	.occasion-card,
+	.experience-photo-card {
+		width: min(92vw, 640px);
+	}
+
+	.magic-castle-feature,
+	.bumbershoot-feature,
+	.voila-feature,
+	.haunted-soiree-feature {
+		flex-wrap: wrap !important;
+		justify-content: center !important;
+		gap: 1rem !important;
+	}
+
+	.magic-castle-feature > img,
+	.bumbershoot-feature > img,
+	.voila-feature > img,
+	.haunted-soiree-feature > img {
+		margin: 0 !important;
+		max-width: min(92vw, 430px) !important;
+		width: min(92vw, 430px) !important;
+		flex: 0 1 auto !important;
+	}
+}
+
 @media (max-width: 700px) {
 	.hero {
 		overflow: visible;
@@ -1192,12 +1472,12 @@ input[type=text],input[type=date],input[type=number],textarea{width:100%;padding
 .form-actions{display:flex;gap:12px;align-items:center;margin-top:12px}
 
 
-/* Final override: keep these sections in two columns at all dimensions */
+/* Keep feature sections in two columns only when there is enough width. */
 .bumbershoot-feature,
 .voila-feature,
 .haunted-soiree-feature {
 	display: flex !important;
-	flex-wrap: nowrap !important;
+	flex-wrap: wrap !important;
 	justify-content: space-between !important;
 	align-items: center !important;
 	gap: 1.1em !important;
@@ -1230,5 +1510,13 @@ input[type=text],input[type=date],input[type=number],textarea{width:100%;padding
 .voila-feature > div > div,
 .haunted-soiree-feature > div > div {
 	max-width: none !important;
+}
+
+@media (min-width: 1001px) {
+	.bumbershoot-feature,
+	.voila-feature,
+	.haunted-soiree-feature {
+		flex-wrap: nowrap !important;
+	}
 }
 
