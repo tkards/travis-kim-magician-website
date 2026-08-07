@@ -226,6 +226,13 @@
       .epk-header h1 {
         font-size: 2rem;
       }
+
+      .epk-header .contact-info p,
+      .epk-section a,
+      .epk-header .contact-info a {
+        overflow-wrap: anywhere;
+        word-break: break-word;
+      }
       
       .press-photos {
         grid-template-columns: 1fr;
@@ -233,6 +240,16 @@
       
       .stats-grid {
         grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 440px) {
+      .epk-header .contact-info a,
+      .epk-section a,
+      footer a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 36px;
       }
     }
   </style>
