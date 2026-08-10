@@ -677,19 +677,35 @@ header, main, footer, .hero, .container, .about, .gallery, .testimonials, .site-
 	z-index:3;
 	pointer-events:none;
 }
+.hero-logo-slot{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	position:relative;
+	flex:0 0 auto;
+	min-width:0;
+	padding:0.35rem 0.45rem;
+	overflow:hidden;
+	isolation:isolate;
+}
+.hero-scroll-slot{
+	overflow:visible;
+	pointer-events:auto;
+	margin-left:clamp(0.3rem,1vw,0.9rem);
+	margin-bottom:clamp(0.8rem,1.6vw,1.3rem);
+	align-self:flex-end;
+}
 .hero-scroll-arrow{
-	position:absolute;
-	right:clamp(32px,5.2vw,78px);
-	bottom:clamp(56px,8.2vw,112px);
-	z-index:4;
+	position:relative;
+	z-index:1;
 	display:flex;
 	flex-direction:column;
 	align-items:center;
 	justify-content:flex-end;
 	width:auto;
-	min-width:30px;
+	min-width:66px;
 	height:auto;
-	gap:10px;
+	gap:12px;
 	line-height:1;
 	text-decoration:none;
 	color:rgba(255,255,255,0.94);
@@ -699,12 +715,12 @@ header, main, footer, .hero, .container, .about, .gallery, .testimonials, .site-
 
 .hero-scroll-arrow-label{
 	font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
-	font-size:0.92rem;
+	font-size:1rem;
 	font-weight:700;
 	letter-spacing:0.18em;
 	text-transform:uppercase;
 	white-space:nowrap;
-	transform:translateY(-8px);
+	transform:translateY(-10px);
 }
 
 .hero-scroll-arrow-icon{
@@ -717,7 +733,7 @@ header, main, footer, .hero, .container, .about, .gallery, .testimonials, .site-
 .hero-scroll-arrow-shaft{
 	display:block;
 	width:2px;
-	height:52px;
+	height:58px;
 	border-radius:99px;
 	background:currentColor;
 	opacity:0.96;
@@ -725,8 +741,8 @@ header, main, footer, .hero, .container, .about, .gallery, .testimonials, .site-
 
 .hero-scroll-arrow-icon::after{
 	content:"";
-	width:14px;
-	height:14px;
+	width:16px;
+	height:16px;
 	margin-top:-1px;
 	border-right:2px solid currentColor;
 	border-bottom:2px solid currentColor;
@@ -749,38 +765,40 @@ header, main, footer, .hero, .container, .about, .gallery, .testimonials, .site-
 }
 
 .hero-logo{
+	display:block;
 	height:clamp(53px,8.0vw,106px);
 	width:auto;
 	max-width:228px;
 	object-fit:contain;
-	opacity:0.98;
-	filter:brightness(1.04);
+	opacity:1;
+	filter:none;
+	box-shadow:none;
 }
-.hero-logo:first-child{
+.hero-logo-magic-castle{
 	height:clamp(72px,10.8vw,144px);
 	max-width:306px;
 }
-.hero-logo:nth-of-type(2){
+.hero-logo-amazon{
 	transform:translateY(14px);
 }
-.hero-logo:nth-of-type(3){
+.hero-logo-sonos{
 	height:clamp(60px,8.9vw,120px);
 	max-width:240px;
 	transform:translateY(3px);
 }
-.hero-logo:nth-of-type(4){
+.hero-logo-sanca{
 	height:clamp(46px,6.7vw,91px);
 	max-width:180px;
 }
-.hero-logo:nth-of-type(5){
+.hero-logo-card-kingdom{
 	height:clamp(54px,8.1vw,108px);
 	max-width:216px;
 }
-.hero-logo:nth-of-type(6){
+.hero-logo-gian{
 	height:clamp(43px,6.5vw,86px);
 	max-width:174px;
 }
-.hero-logo:nth-of-type(7){
+.hero-logo-fred-hutch{
 	height:clamp(57px,8.8vw,117px);
 	max-width:236px;
 }
@@ -788,7 +806,7 @@ header, main, footer, .hero, .container, .about, .gallery, .testimonials, .site-
 	height:clamp(48px,7.1vw,95px);
 	max-width:190px;
 }
-.hero-logo:nth-of-type(9){
+.hero-logo-bouldering-project{
 	height:clamp(43px,6.5vw,86px);
 	max-width:174px;
 }
@@ -880,7 +898,7 @@ header, main, footer, .hero, .container, .about, .gallery, .testimonials, .site-
 		transform: none !important;
 	}
 
-	.hero-logo:first-child {
+	.hero-logo-magic-castle {
 		height: clamp(48px, 7.2vw, 92px);
 		max-width: 196px;
 	}
@@ -1013,7 +1031,7 @@ header, main, footer, .hero, .container, .about, .gallery, .testimonials, .site-
 		max-width: 140px;
 	}
 
-	.hero-logo:first-child {
+	.hero-logo-magic-castle {
 		height: clamp(44px, 9.4vw, 92px);
 		max-width: 190px;
 	}
@@ -1383,37 +1401,37 @@ header, main, footer, .hero, .container, .about, .gallery, .testimonials, .site-
 		transform: none !important;
 	}
 
-	.hero-logo:first-child {
+	.hero-logo-magic-castle {
 		height: clamp(46px, 9.2vw, 100px);
 		max-width: 200px;
 	}
 
-	.hero-logo:nth-of-type(2) {
+	.hero-logo-amazon {
 		transform: translateY(10px);
 	}
 
-	.hero-logo:nth-of-type(3) {
+	.hero-logo-sonos {
 		height: clamp(38px, 7.2vw, 77px);
 		max-width: 156px;
 		transform: translateY(2px);
 	}
 
-	.hero-logo:nth-of-type(4) {
+	.hero-logo-sanca {
 		height: clamp(29px, 5.7vw, 61px);
 		max-width: 120px;
 	}
 
-	.hero-logo:nth-of-type(5) {
+	.hero-logo-card-kingdom {
 		height: clamp(36px, 6.8vw, 72px);
 		max-width: 144px;
 	}
 
-	.hero-logo:nth-of-type(6) {
+	.hero-logo-gian {
 		height: clamp(29px, 5.7vw, 61px);
 		max-width: 120px;
 	}
 
-	.hero-logo:nth-of-type(7) {
+	.hero-logo-fred-hutch {
 		height: clamp(39px, 7.7vw, 82px);
 		max-width: 164px;
 	}
@@ -1423,7 +1441,7 @@ header, main, footer, .hero, .container, .about, .gallery, .testimonials, .site-
 		max-width: 130px;
 	}
 
-	.hero-logo:nth-of-type(9) {
+	.hero-logo-bouldering-project {
 		height: clamp(29px, 5.7vw, 61px);
 		max-width: 120px;
 	}
@@ -2987,6 +3005,15 @@ cite{font-weight:600;color:#ccc;margin-top:10px;display:block}
 		pointer-events: none;
 	}
 
+	.hero-logo-slot {
+		padding: 0.28rem 0.36rem;
+	}
+
+	.hero-scroll-slot {
+		margin-left: 0;
+		margin-bottom: 0.45rem;
+	}
+
 	.hero-logo-row .hero-logo {
 		height: clamp(34px, 5vw, 62px);
 		max-width: 162px;
@@ -2995,7 +3022,7 @@ cite{font-weight:600;color:#ccc;margin-top:10px;display:block}
 		flex: 0 1 auto;
 	}
 
-	.hero-logo-row .hero-logo:first-child {
+	.hero-logo-row .hero-logo-magic-castle {
 		height: clamp(44px, 6.4vw, 78px);
 		max-width: 186px;
 	}
@@ -3034,7 +3061,7 @@ cite{font-weight:600;color:#ccc;margin-top:10px;display:block}
 		max-width: 144px;
 	}
 
-	.hero-logo-row .hero-logo:first-child {
+	.hero-logo-row .hero-logo-magic-castle {
 		height: clamp(42px, 9.3vw, 68px);
 		max-width: 170px;
 	}
@@ -3064,13 +3091,17 @@ cite{font-weight:600;color:#ccc;margin-top:10px;display:block}
 		gap: 0.58rem 0.72rem;
 	}
 
+	.hero-logo-slot {
+		padding: 0.22rem 0.28rem;
+	}
+
 	.hero-logo-row .hero-logo {
 		height: clamp(30px, 8.4vw, 44px);
 		max-width: clamp(102px, 27vw, 136px);
 		flex: 0 1 clamp(102px, 28vw, 136px);
 	}
 
-	.hero-logo-row .hero-logo:first-child {
+	.hero-logo-row .hero-logo-magic-castle {
 		height: clamp(38px, 10.2vw, 54px);
 		max-width: clamp(124px, 33vw, 164px);
 		flex-basis: clamp(124px, 33vw, 164px);
