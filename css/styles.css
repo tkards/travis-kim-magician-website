@@ -3033,6 +3033,89 @@ cite{font-weight:600;color:#ccc;margin-top:10px;display:block}
 	}
 }
 
+/* Earlier handoff for the Trusted By group only: keep nav and wide hero behavior unchanged. */
+@media (max-width: 1700px) {
+	.hero-trusted {
+		position: relative;
+		z-index: 4;
+		margin: 0;
+		padding: 1.2rem 24px 1.45rem;
+		background: #0B0D10;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.55rem;
+		max-width: 100%;
+		box-sizing: border-box;
+	}
+
+	.hero-trust-line {
+		position: static;
+		left: auto;
+		bottom: auto;
+		transform: none;
+		margin: 0;
+		padding: 0;
+		font-size: clamp(0.62rem, 0.94vw, 0.8rem);
+		letter-spacing: 0.24em;
+		text-align: center;
+		white-space: normal;
+		width: 100%;
+	}
+
+	.hero-trust-line::before {
+		display: none;
+	}
+
+	.hero-logo-row {
+		position: static;
+		left: auto;
+		bottom: auto;
+		transform: none;
+		width: min(100%, 66rem);
+		max-width: 100%;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		gap: clamp(0.75rem, 1.8vw, 1.25rem);
+		pointer-events: none;
+		box-sizing: border-box;
+	}
+
+	.hero-logo-slot {
+		padding: 0.28rem 0.36rem;
+	}
+
+	.hero-scroll-slot {
+		display: none;
+	}
+
+	.hero-scroll-arrow {
+		display: none;
+	}
+
+	.hero-logo-row .hero-logo {
+		height: clamp(34px, 5vw, 62px);
+		max-width: 162px;
+		width: auto;
+		transform: none !important;
+		flex: 0 1 auto;
+	}
+
+	.hero-logo-row .hero-logo-magic-castle {
+		height: clamp(44px, 6.4vw, 78px);
+		max-width: 186px;
+	}
+
+	.hero-logo-row .hero-logo-bumbershoot {
+		height: clamp(31px, 4.6vw, 56px);
+		max-width: 144px;
+	}
+}
+
 @media (max-width: 900px) {
 	.hero-top-name {
 		top: 18px;
