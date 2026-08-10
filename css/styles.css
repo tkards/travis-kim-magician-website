@@ -40,6 +40,7 @@
 	width:min(100%, 1240px);
 	margin:0 auto;
 	padding:2.4rem 0 0.8rem;
+	scroll-margin-top:6rem;
 }
 .faq-header{
 	text-align:center;
