@@ -97,35 +97,40 @@
   <header class="hero">
     <div class="hero-top-name">Travis Kim</div>
     <div class="hero-top-actions">
-      <nav class="hero-top-nav" aria-label="Section navigation">
-        <a class="hero-top-link" href="#main-content">EVENTS</a>
-        <a class="hero-top-link" href="#about">ABOUT</a>
-        <a class="hero-top-link" href="#experience">THE EXPERIENCE</a>
-        <a class="hero-top-link" href="#recognition">RECOGNITION</a>
-        <a class="hero-top-link" href="#reviews">REVIEWS</a>
-        <a class="hero-top-link" href="#faq">FAQ</a>
-      </nav>
-      <a class="hero-top-cta" href="booking.html">CHECK AVAILABILITY</a>
+      <button class="hero-menu-toggle" type="button" aria-expanded="false" aria-controls="hero-menu-panel" aria-label="Open navigation menu">
+        <span class="hero-menu-toggle-icon" aria-hidden="true"></span>
+      </button>
+      <div class="hero-menu-panel" id="hero-menu-panel">
+        <nav class="hero-top-nav" aria-label="Section navigation">
+          <a class="hero-top-link" href="#main-content">EVENTS</a>
+          <a class="hero-top-link" href="#about">ABOUT</a>
+          <a class="hero-top-link" href="#experience">THE EXPERIENCE</a>
+          <a class="hero-top-link" href="#recognition">RECOGNITION</a>
+          <a class="hero-top-link" href="#reviews">REVIEWS</a>
+          <a class="hero-top-link" href="#faq">FAQ</a>
+        </nav>
+        <a class="hero-top-cta" href="booking.html">CHECK AVAILABILITY</a>
+      </div>
     </div>
     <div class="hero-overlay"></div>
-    <img class="hero-image" src="assets/New Magic Photos/seattle magician travis kim corporate event 2.JPG" alt="Seattle magician Travis Kim performing close-up magic for guests at a Seattle event, engaging the audience with sleight-of-hand.">
-    <div class="hero-copy">
-      <p class="hero-kicker">PREMIER ENTERTAINMENT</p>
-      <h1 class="hero-headline">Unforgettable Moments</h1>
-      <p class="hero-subtext">World-class magic for corporate events, weddings, and private celebrations.</p>
-      <a class="hero-copy-cta" href="booking.html">CHECK AVAILABILITY</a>
+    <div class="hero-image-wrap">
+      <img class="hero-image" src="assets/New Magic Photos/seattle magician travis kim corporate event 2.png" alt="Seattle magician Travis Kim performing close-up magic for guests at a Seattle event, engaging the audience with sleight-of-hand.">
     </div>
-    <p class="hero-trust-line">TRUSTED BY LEADING COMPANIES &amp; VENUES</p>
-    <div class="hero-logo-row" aria-label="Trusted by companies and venues">
-      <img class="hero-logo" src="assets/Trusted By Logos/magic-castle_logo_white-on-transparent.png" alt="Magic Castle logo">
-      <img class="hero-logo" src="assets/Trusted By Logos/amazon logo.png" alt="Amazon logo">
-      <img class="hero-logo" src="assets/Trusted By Logos/Sonos Logo Transparent.png" alt="Sonos logo">
-      <img class="hero-logo" src="assets/Trusted By Logos/sanca logo transparent.png" alt="Sanca logo">
-      <img class="hero-logo" src="assets/Trusted By Logos/card_kingdom_white.png" alt="Card Kingdom logo">
-      <img class="hero-logo" src="assets/Trusted By Logos/gian logo.webp" alt="Gian logo">
-      <img class="hero-logo" src="assets/Trusted By Logos/fred_hutch_white.png" alt="Fred Hutch logo">
-      <img class="hero-logo hero-logo-bumbershoot" src="assets/Trusted By Logos/Bumbershoot_Staggered_Wordmark2_Vert_Digital_Black.webp" alt="Bumbershoot logo">
-      <img class="hero-logo" src="assets/Trusted By Logos/bouldering_project_logo_white.png" alt="The Bouldering Project logo">
+    <div class="hero-copy">
+    </div>
+    <div class="hero-trusted" aria-label="Trusted by companies and venues">
+      <p class="hero-trust-line">TRUSTED BY LEADING COMPANIES &amp; VENUES</p>
+      <div class="hero-logo-row">
+        <img class="hero-logo" src="assets/Trusted By Logos/magic-castle_logo_white-on-transparent.png" alt="Magic Castle logo">
+        <img class="hero-logo" src="assets/Trusted By Logos/amazon logo.png" alt="Amazon logo">
+        <img class="hero-logo" src="assets/Trusted By Logos/Sonos Logo Transparent.png" alt="Sonos logo">
+        <img class="hero-logo" src="assets/Trusted By Logos/sanca logo transparent.png" alt="Sanca logo">
+        <img class="hero-logo" src="assets/Trusted By Logos/card_kingdom_white.png" alt="Card Kingdom logo">
+        <img class="hero-logo" src="assets/Trusted By Logos/gian logo.webp" alt="Gian logo">
+        <img class="hero-logo" src="assets/Trusted By Logos/fred_hutch_white.png" alt="Fred Hutch logo">
+        <img class="hero-logo hero-logo-bumbershoot" src="assets/Trusted By Logos/Bumbershoot_Staggered_Wordmark2_Vert_Digital_Black.webp" alt="Bumbershoot logo">
+        <img class="hero-logo" src="assets/Trusted By Logos/bouldering_project_logo_white.png" alt="The Bouldering Project logo">
+      </div>
     </div>
     <a class="hero-scroll-arrow" href="#main-content" aria-label="Scroll down to main content"><span class="hero-scroll-arrow-label">learn more</span><span class="hero-scroll-arrow-icon" aria-hidden="true"><span class="hero-scroll-arrow-shaft"></span></span></a>
   </header>
@@ -437,6 +442,60 @@
         item.addEventListener('toggle', () => {
           summary.setAttribute('aria-expanded', item.open ? 'true' : 'false');
         });
+      });
+    })();
+
+    (function() {
+      const heroActions = document.querySelector('.hero-top-actions');
+      const menuToggle = document.querySelector('.hero-menu-toggle');
+      const menuPanel = document.querySelector('.hero-menu-panel');
+      if (!heroActions || !menuToggle || !menuPanel) {
+        return;
+      }
+
+      const closeMenu = () => {
+        heroActions.classList.remove('is-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Open navigation menu');
+      };
+
+      const openMenu = () => {
+        heroActions.classList.add('is-open');
+        menuToggle.setAttribute('aria-expanded', 'true');
+        menuToggle.setAttribute('aria-label', 'Close navigation menu');
+      };
+
+      menuToggle.addEventListener('click', () => {
+        if (heroActions.classList.contains('is-open')) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+
+      menuPanel.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          closeMenu();
+        });
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          closeMenu();
+          menuToggle.focus();
+        }
+      });
+
+      document.addEventListener('click', (event) => {
+        if (!heroActions.contains(event.target)) {
+          closeMenu();
+        }
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.matchMedia('(min-width: 1561px)').matches) {
+          closeMenu();
+        }
       });
     })();
   </script>
