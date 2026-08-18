@@ -298,6 +298,27 @@ header, main, footer, .hero, .container, .about, .gallery, .testimonials, .site-
 .hero::after{display:none}
 .hero-image-wrap::after{content:"";position:absolute;left:0;right:0;bottom:0;height:36%;background:linear-gradient(to bottom,rgba(11,13,16,0) 0%,rgba(11,13,16,0.82) 72%,#0B0D10 100%);pointer-events:none;z-index:2;}
 .hero-content{position:absolute;inset:0;z-index:2;text-align:center;color:#fff;padding:20px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.hero .hero-trusted,
+.hero .hero-trust-line,
+.hero .hero-logo-row,
+.hero .hero-logo-slot {
+	display:none !important;
+}
+.hero-scroll-standalone {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: clamp(60px, 8vw, 104px);
+	z-index: 3;
+	pointer-events: auto;
+	display: none;
+}
+
+@media (min-width: 1360px) and (min-height: 780px) {
+	.hero-scroll-standalone {
+		display: block;
+	}
+}
 .hero-top-name{
 	position:absolute;
 	top:34px;
@@ -586,6 +607,13 @@ header, main, footer, .hero, .container, .about, .gallery, .testimonials, .site-
 	.occasion-card img {
 		aspect-ratio: 5 / 6;
 	}
+
+	.occasion-row .occasion-card:nth-child(3) {
+		grid-column: 1 / -1;
+		justify-self: center;
+		max-width: calc((100% - clamp(1rem, 2.2vw, 1.8rem)) / 2);
+		width: 100%;
+	}
 }
 
 @media (max-width: 760px) {
@@ -603,6 +631,12 @@ header, main, footer, .hero, .container, .about, .gallery, .testimonials, .site-
 
 	.occasion-card {
 		width: min(92vw, 520px);
+	}
+
+	.occasion-row .occasion-card:nth-child(3) {
+		grid-column: auto;
+		justify-self: stretch;
+		max-width: none;
 	}
 
 	.occasion-card img {
@@ -752,6 +786,20 @@ header, main, footer, .hero, .container, .about, .gallery, .testimonials, .site-
 .hero-scroll-arrow:hover,
 .hero-scroll-arrow:focus-visible{
 	color:#d2b172;
+}
+
+.hero-scroll-standalone .hero-scroll-arrow {
+	display:flex;
+	position: relative;
+	right: auto;
+	bottom: auto;
+	margin: 0;
+}
+
+@media (max-width: 1700px) {
+	.hero-scroll-standalone .hero-scroll-arrow {
+		display:flex !important;
+	}
 }
 
 @keyframes hero-scroll-bounce {
@@ -3194,6 +3242,80 @@ cite{font-weight:600;color:#ccc;margin-top:10px;display:block}
 		height: clamp(28px, 7.6vw, 40px);
 		max-width: clamp(94px, 25vw, 124px);
 		flex-basis: clamp(94px, 25vw, 124px);
+	}
+}
+
+/* About section: switch to stacked reading flow before copy becomes cramped. */
+@media (max-width: 900px) {
+	.about {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		gap: 0;
+		text-align: initial;
+	}
+
+	.about > div {
+		display: contents;
+	}
+
+	.about-title {
+		order: 1;
+		text-align: center;
+		margin-bottom: 0.75rem;
+	}
+
+	.headshot {
+		order: 2;
+		align-self: center;
+		width: min(82%, 440px);
+		max-width: 440px;
+		height: auto;
+		margin: 0.55rem auto 1.25rem;
+	}
+
+	.about > div p {
+		width: 100%;
+		max-width: none;
+		text-align: left;
+		padding-inline: clamp(20px, 4vw, 24px);
+	}
+
+	.about > div p:nth-of-type(1) {
+		order: 3;
+	}
+
+	.about > div p:nth-of-type(2) {
+		order: 4;
+	}
+
+	.about > div p:nth-of-type(3) {
+		order: 5;
+	}
+}
+
+/* THE EXPERIENCE: switch to stacked layout before cards become cramped. */
+@media (min-width: 761px) and (max-width: 1120px) {
+	.experience-photo-row {
+		grid-template-columns: 1fr;
+		gap: clamp(1.9rem, 3vw, 2.4rem);
+		width: 100%;
+		max-width: 100%;
+		margin: 1.2rem auto 0;
+		padding: 0 clamp(16px, 2.6vw, 28px);
+		justify-items: center;
+		justify-content: center;
+		margin-left: 0;
+		transform: none;
+	}
+
+	.experience-photo-card {
+		width: min(100%, 820px);
+	}
+
+	.experience-photo-copy,
+	.experience-photo-copy-wide {
+		max-width: 52ch;
 	}
 }
 
